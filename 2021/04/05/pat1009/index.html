@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>日记 | 白羊</title>
+  <title>pat1009 | 白羊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每月小结，看看自己这个月用于什么的时间是多少，如上课，认真学习，玩 同时年度总结，对自己本月进行反思">
+  <meta name="description" content="1009. 说反话 (20) [字符串处理]给定⼀句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日记">
-<meta property="og:url" content="http://example.com/2021/02/24/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/index.html">
+<meta property="og:title" content="pat1009">
+<meta property="og:url" content="http://example.com/2021/04/05/pat1009/index.html">
 <meta property="og:site_name" content="白羊">
-<meta property="og:description" content="每月小结，看看自己这个月用于什么的时间是多少，如上课，认真学习，玩 同时年度总结，对自己本月进行反思">
+<meta property="og:description" content="1009. 说反话 (20) [字符串处理]给定⼀句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-24T07:59:00.706Z">
-<meta property="article:modified_time" content="2021-04-05T14:49:51.398Z">
+<meta property="article:published_time" content="2021-04-05T15:05:29.347Z">
+<meta property="article:modified_time" content="2021-04-05T15:00:42.349Z">
 <meta property="article:author" content="白羊">
-<meta property="article:tag" content="更多知识">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="pat">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白羊" type="application/atom+xml">
@@ -151,49 +152,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-时间管理法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-pat1009" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      日记
+      pat1009
     </h1>
   
 
         
-        <a href="/2021/02/24/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-02-24T07:59:00.706Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
+        <a href="/2021/04/05/pat1009/" class="archive-article-date">
+  	<time datetime="2021-04-05T15:05:29.347Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>每月小结，看看自己这个月用于什么的时间是多少，如上课，认真学习，玩</p>
-<p>同时年度总结，对自己本月进行反思<a id="more"></a></p>
+        <h1 id="1009-说反话-20-字符串处理"><a href="#1009-说反话-20-字符串处理" class="headerlink" title="1009. 说反话 (20) [字符串处理]"></a>1009. 说反话 (20) [字符串处理]</h1><p>给定⼀句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。<a id="more"></a></p>
+<p>输⼊格式：</p>
+<p>测试输⼊包含⼀个测试⽤例，在⼀⾏内给出总⻓度不超过80的字符串。字符串由若⼲单词和若⼲空格 组成，其中单词是由英⽂字⺟（⼤⼩写有区分）组成的字符串，单词之间⽤1个空格分开，输⼊保证句 ⼦末尾没有多余的空格。</p>
+<p>输出格式：</p>
+<p>每个测试⽤例的输出占⼀⾏，输出倒序后的句⼦。</p>
+<p>输⼊样例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World Here I Come</span><br></pre></td></tr></table></figure>
+
+<p>输出样例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Come I Here World Hello</span><br></pre></td></tr></table></figure>
+
+<p>分析：将输⼊的每个单词s都分别v.push(s)压⼊栈中，再输出栈顶v.top()，然后将栈顶元素弹出 v.pop()，直到栈空为⽌～</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; v;</span><br><span class="line"> <span class="built_in">string</span> s;</span><br><span class="line"> <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; s) v.push(s);</span><br><span class="line"> <span class="built_in">cout</span> &lt;&lt; v.top();</span><br><span class="line"> v.pop();</span><br><span class="line"> <span class="keyword">while</span>(!v.empty()) &#123;</span><br><span class="line"> <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; v.top();</span><br><span class="line"> v.pop();</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
-<p>记录尽可能准确的记录时间被用在了哪里，</p>
-<p>统计以每周每个月或每年为单位，统计每件事情用了多少时间</p>
-<p>分析，分析在过去这段时间里，哪些运用时间的方法是高效的，哪些是可以改进的</p>
-<p>反馈根据自己分析得出的结论做出改变，让自己更加有效的利用时间</p>
-<h4 id="记录–》统计–》分析–》反馈"><a href="#记录–》统计–》分析–》反馈" class="headerlink" title="记录–》统计–》分析–》反馈"></a>记录–》统计–》分析–》反馈</h4><p>要点：</p>
-<ul>
-<li>首先是记录的及时性，不要连续做了好几件事情再回过头来一件一件的记，要一事一记，同时要保持时间记录的真实性、准确性。要保证记录的误差不要大于15分钟就可以了。</li>
-<li>其次，选择记录的时间段要相对固定并且有代表性，如果你要记录自己在某项相对重复的工作上花费了多少时间，最好是每天固定的时间段来做这项工作，人在固定时段的状态是相对稳定的。</li>
-<li>最后你还要根据记录情况，及时调整时间分配计划，在每周或每月总结的时候要找出上一段计划当中实际消耗时间与计划消耗时间之间的差额，然后结合自己的工作效率重新分配下一时间段。</li>
-<li>坚持是在时间管理方面必不可少的品质。</li>
-</ul>
-<p>时间管理法的五大法则：恰当运用这五大法则，可以让时间管理法不会成为你的一种镣铐，而是成为运用自如的乐器。</p>
-<ol>
-<li>不要为了完成工作而放弃自己的兴趣爱好。对作者而说，不论工作有多困难，任务有多繁重，只要他愿意，就一定能在自己预估的时间里按部就班的完成，但事实上，作者并不是像我们想象中的那么从一而终，很多时候它的本质工作，是要为兴趣让路的。没有什么比满足自己的求知欲和好奇重要，与其被迫在完成工作和满足好奇心之间做出选择，不如索性大方拒绝那些必须完成的任务而选择兴趣。</li>
-<li>不接受紧急的任务。因为接受紧急的任务可能会因为由于时间仓促而无法做到尽善其美，更重要的是，它会打破你原有的节奏，引起一系列的连锁反应，最后反而是更费时间的。</li>
-<li>一累了就马上停止工作去休息。</li>
-<li>保证睡眠时间，每天10小时左右。没有这条守则，时间管理方法将永远是纸上谈兵。作者认为，休息是需要规划、记录、安排再规划的，因为这种方法并不是一种间歇性的方法，而是一种长期性的计划，这是一种很容易让人产生压迫感的方法，如果睡的不好，没有足够的休息，当你面对一张慢慢当当的计划表的时候，很容易陷入被计划牵着鼻子走的恶训循环，一旦陷入这样的恶训循环，就离放弃不远了。</li>
-<li>把累人的工作和愉快的工作结合在一起。</li>
-</ol>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#51;&#48;&#x32;&#51;&#48;&#52;&#55;&#x30;&#x33;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#49;&#51;&#48;&#x32;&#51;&#48;&#52;&#55;&#x30;&#x33;&#x40;&#113;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+
       
 
       
@@ -206,7 +201,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">更多知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
         		</li>
       		
 		</ul>
@@ -262,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/24/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/" alt="微信分享二维码">
+      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/05/pat1009/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +275,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/02/25/%E7%BF%BB%E5%A2%99(%E4%B8%8A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          翻墙(上)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/23/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搭建博客以及优化</div>
+    <a href="/2021/04/05/pat1008/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pat1008</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -314,7 +304,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%B0%E5%BD%95%E2%80%93%E3%80%8B%E7%BB%9F%E8%AE%A1%E2%80%93%E3%80%8B%E5%88%86%E6%9E%90%E2%80%93%E3%80%8B%E5%8F%8D%E9%A6%88"><span class="toc-number">1.</span> <span class="toc-text">记录–》统计–》分析–》反馈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"></span></a>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1009-%E8%AF%B4%E5%8F%8D%E8%AF%9D-20-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">1009. 说反话 (20) [字符串处理]</span></a></li></ol>
                     </div>
                 </span>
             </div>
