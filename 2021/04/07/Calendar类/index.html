@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>pat1001 | 白羊</title>
+  <title>Java中Calendar类的常用方法 | 白羊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1001. 害死⼈不偿命的(3n+1)猜想(15) [模拟]卡拉兹(Callatz)猜想： 对任何⼀个⾃然数n，如果它是偶数，那么把它砍掉⼀半；如果它是奇数，那么把(3n+1)砍掉⼀半。这 样⼀直反复砍下去，最后⼀定在某⼀步得到n&#x3D;1。卡拉兹在1950年的世界数学家⼤会上公布了这个猜 想，传说当时耶鲁⼤学师⽣⻬动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学⽣们⽆⼼学 业，⼀⼼只证(3n+1)">
+  <meta name="description" content="Java中Calendar类的常用方法认识Calendar可分为两种，一种入门简单了解的，另一种为深入了解基础，个人查找的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pat1001">
-<meta property="og:url" content="http://example.com/2021/03/11/pat1001/index.html">
+<meta property="og:title" content="Java中Calendar类的常用方法">
+<meta property="og:url" content="http://example.com/2021/04/07/Calendar%E7%B1%BB/index.html">
 <meta property="og:site_name" content="白羊">
-<meta property="og:description" content="1001. 害死⼈不偿命的(3n+1)猜想(15) [模拟]卡拉兹(Callatz)猜想： 对任何⼀个⾃然数n，如果它是偶数，那么把它砍掉⼀半；如果它是奇数，那么把(3n+1)砍掉⼀半。这 样⼀直反复砍下去，最后⼀定在某⼀步得到n&#x3D;1。卡拉兹在1950年的世界数学家⼤会上公布了这个猜 想，传说当时耶鲁⼤学师⽣⻬动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学⽣们⽆⼼学 业，⼀⼼只证(3n+1)">
+<meta property="og:description" content="Java中Calendar类的常用方法认识Calendar可分为两种，一种入门简单了解的，另一种为深入了解基础，个人查找的。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-11T15:01:17.326Z">
-<meta property="article:modified_time" content="2021-04-06T10:03:15.455Z">
+<meta property="article:published_time" content="2021-04-07T04:55:52.305Z">
+<meta property="article:modified_time" content="2021-04-07T04:55:33.551Z">
 <meta property="article:author" content="白羊">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="pat">
+<meta property="article:tag" content="java基础">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白羊" type="application/atom+xml">
@@ -152,44 +151,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pat1001" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Calendar类" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      pat1001
+      Java中Calendar类的常用方法
     </h1>
   
 
         
-        <a href="/2021/03/11/pat1001/" class="archive-article-date">
-  	<time datetime="2021-03-11T15:01:17.326Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-11</time>
+        <a href="/2021/04/07/Calendar%E7%B1%BB/" class="archive-article-date">
+  	<time datetime="2021-04-07T04:55:52.305Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1001-害死⼈不偿命的-3n-1-猜想-15-模拟"><a href="#1001-害死⼈不偿命的-3n-1-猜想-15-模拟" class="headerlink" title="1001. 害死⼈不偿命的(3n+1)猜想(15) [模拟]"></a>1001. 害死⼈不偿命的(3n+1)猜想(15) [模拟]</h1><p>卡拉兹(Callatz)猜想：</p>
-<p>对任何⼀个⾃然数n，如果它是偶数，那么把它砍掉⼀半；如果它是奇数，那么把(3n+1)砍掉⼀半。这 样⼀直反复砍下去，最后⼀定在某⼀步得到n=1。卡拉兹在1950年的世界数学家⼤会上公布了这个猜 想，传说当时耶鲁⼤学师⽣⻬动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学⽣们⽆⼼学 业，⼀⼼只证(3n+1)，以⾄于有⼈说这是⼀个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……<a id="more"></a></p>
-<p>我们今天的题⽬不是证明卡拉兹猜想，⽽是对给定的任⼀不超过1000的正整数n，简单地数⼀下，需要 多少步（砍⼏下）才能得到n=1？</p>
-<p>输⼊格式：</p>
-<p>每个测试输⼊包含1个测试⽤例，即给出⾃然数n的值。</p>
-<p>输出格式：</p>
-<p>输出从n计算到1需要的步数。</p>
-<p>输⼊样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Java中Calendar类的常用方法"><a href="#Java中Calendar类的常用方法" class="headerlink" title="Java中Calendar类的常用方法"></a>Java中Calendar类的常用方法</h1><p>认识Calendar可分为两种，一种入门简单了解的，另一种为深入了解基础，个人查找的。<a id="more"></a></p>
+<h2 id="Calendar基础了解"><a href="#Calendar基础了解" class="headerlink" title="Calendar基础了解"></a>Calendar基础了解</h2><h3 id="获取时间-get"><a href="#获取时间-get" class="headerlink" title="获取时间(get)"></a>获取时间(get)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用默认时区和语言环境获得一个日历</span></span><br><span class="line">   Calendar cal = Calendar.getInstance();</span><br><span class="line">   <span class="comment">// 赋值时年月日时分秒常用的6个值，注意月份下标从0开始，所以取月份要+1</span></span><br><span class="line">   sout(<span class="string">&quot;年:&quot;</span> + cal.get(Calendar.YEAR));</span><br><span class="line">   sout(<span class="string">&quot;月:&quot;</span> + (cal.get(Calendar.MONTH) + <span class="number">1</span>));       </span><br><span class="line">   sout(<span class="string">&quot;日:&quot;</span> + cal.get(Calendar.DAY_OF_MONTH));</span><br><span class="line">   sout(<span class="string">&quot;时:&quot;</span> + cal.get(Calendar.HOUR_OF_DAY));</span><br><span class="line">   sout(<span class="string">&quot;分:&quot;</span> + cal.get(Calendar.MINUTE));</span><br><span class="line">   sout(<span class="string">&quot;秒:&quot;</span> + cal.get(Calendar.SECOND));</span><br></pre></td></tr></table></figure>
 
-<p>输出样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>结果为：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">年:<span class="number">2021</span></span><br><span class="line">月:<span class="number">4</span></span><br><span class="line">日:<span class="number">7</span></span><br><span class="line">时:<span class="number">11</span></span><br><span class="line">分:<span class="number">32</span></span><br><span class="line">秒:<span class="number">24</span></span><br></pre></td></tr></table></figure>
 
-<p>分析：count从0开始统计需要的步数，(n % 2 != 0) 表示n为奇数，当n为奇数，就令n = 3*n+1；之后将 其砍掉⼀半，步数count+1，直到n == 1为⽌，最后输出count～</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num=<span class="number">0</span>,n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n!=<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(n%<span class="number">2</span>)n=(<span class="number">3</span>*n+<span class="number">1</span>);</span><br><span class="line">        n=n/<span class="number">2</span>;</span><br><span class="line">        num++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;num;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="设置时间-set"><a href="#设置时间-set" class="headerlink" title="设置时间(set)"></a>设置时间(set)</h3><p>月份的下标从 0 开始，设置时同样需要注意，比如我们设置为 4 月 30 日除夕当晚的倒计时的最后一秒： 2021-04-30 23:59:59 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();</span><br><span class="line"><span class="comment">// 如果想设置为某个日期，可以一次设置年月日时分秒，由于月份下标从0开始赋值月份要-1</span></span><br><span class="line"><span class="comment">// cal.set(year, month, date, hourOfDay, minute, second);</span></span><br><span class="line">cal.set(<span class="number">2021</span>, <span class="number">4</span>, <span class="number">30</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line">System.out.println(cal.getTime();</span><br></pre></td></tr></table></figure>
 
+<p>细节：如果设置的为1月32号，则时间计算会自动进行换算，跳到2月1号，对于其他换算也是如此。</p>
+<h3 id="时间计算-add"><a href="#时间计算-add" class="headerlink" title="时间计算(add)"></a>时间计算(add)</h3><p>add方法：</p>
+<p>比如在金今天(4/7)当晚最后一秒，add 一秒：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();</span><br><span class="line">System.out.println(cal.getTime());</span><br><span class="line">cal.set(<span class="number">2021</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">23</span>, <span class="number">59</span>, <span class="number">59</span>);</span><br><span class="line">cal.add(Calendar.SECOND, <span class="number">1</span>);</span><br><span class="line">System.out.println(cal.getTime());</span><br></pre></td></tr></table></figure>
+<p>打印时间结果如下，日期会自动进入下一天：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Wed Apr <span class="number">07</span> <span class="number">11</span>:<span class="number">39</span>:<span class="number">16</span> CST <span class="number">2021</span></span><br><span class="line">Sat May 08 <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span> CST <span class="number">2021</span></span><br></pre></td></tr></table></figure>
+
+<p>再比如 1 月 30 号的时候，月份加一，会出现怎样结果：(已知2月没有30号)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();</span><br><span class="line">cal.set(<span class="number">2021</span>, <span class="number">0</span>, <span class="number">31</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">System.out.println(cal.getTime());</span><br><span class="line">cal.add(Calendar.MONTH,<span class="number">1</span>);</span><br><span class="line">System.out.println(cal.getTime());</span><br></pre></td></tr></table></figure>
+
+<p>运行结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sun Jan <span class="number">31</span> 08:<span class="number">00</span>:<span class="number">00</span> CST <span class="number">2021</span></span><br><span class="line">Sun Feb <span class="number">28</span> 08:<span class="number">00</span>:<span class="number">00</span> CST <span class="number">2021</span></span><br></pre></td></tr></table></figure>
+<p>说明 add 月份时，会将不存在的日期归为当月日历的最后一天。</p>
+<p>学到这对一般的日历用法够了，想继续深入了解可以参照下面</p>
+<h2 id="Calendar深入了解"><a href="#Calendar深入了解" class="headerlink" title="Calendar深入了解"></a>Calendar深入了解</h2><p>项目当中，我们经常会涉及到对时间的处理。Date 类最主要的作用就是获得当前时间，同时这个类里面也具有设置时间以及一些其他的功能，但是由于本身设计的问题，这些方法却遭到众多批评，不建议使用，而是更推荐使用 Calendar 类进行时间和日期的处理。</p>
+<h3 id="原理简介"><a href="#原理简介" class="headerlink" title="原理简介"></a>原理简介</h3><p>Calendar类被abstract所修饰，说明不能通过new的方式来获得实例，对此，Calendar提供了一个类方法getInstance，以获得此类型的一个通用的对象，getInstance方法返回一个Calendar对象（该对象为Calendar的子类对象），其日历字段已由当前日期和时间初始化：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();</span><br></pre></td></tr></table></figure>
+
+<p>之所以说返回的是Calendar的子类对象，是因为每个国家地区都有自己的一套日历算法，比如西方国家的第一个星期大部分为星期日，而中国则为星期一。我们来看看getInstance方法获取实例的源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Calendar <span class="title">getInstance</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> createCalendar(TimeZone.getDefault(), Locale.getDefault(Locale.Category.FORMAT));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中参数TimeZone.getDefaultRef()代表的就是时区，createCalendar方法就是根据不同国家地区返回对应的日期子类。</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>为了更加便捷的对日期进行操作，Calendar类对YEAR、MONTH、DAY_OF_MONTH、HOUR等日历字段之间的转换提供了一些方法，并为操作日历字段（例如获得下星期的日期）提供了一些方法。瞬间可用毫秒值来表示，它是距历元（即格林威治标准时间 1970 年 1 月 1 日的 00:00:00.000，格里高利历）的偏移量。</p>
+<h4 id="时间获取"><a href="#时间获取" class="headerlink" title="时间获取"></a>时间获取</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Calendar cal = Calendar.getInstance();    							<span class="comment">//Calendar类的实例化</span></span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span>);	<span class="comment">//时间的格式化</span></span><br><span class="line">System.out.println(cal.getTime());                  <span class="comment">//date=Wed Apr 07 12:45:14 CST 2021</span></span><br><span class="line">System.out.println(sdf.format(cal.getTime()));                        <span class="comment">//nowTime=2021-04-07 12:45:14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//当前日：两种方法等价</span></span><br><span class="line"><span class="keyword">int</span> day_of_month = cal.get(Calendar.DAY_OF_MONTH);	<span class="comment">//day_of_month=97</span></span><br><span class="line"><span class="keyword">int</span> day = cal.get(Calendar.DATE);  					<span class="comment">//day=97</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取当月day的最大值！！</span></span><br><span class="line"><span class="keyword">int</span> max_day_of_month = cal.getActualMaximum(Calendar.DAY_OF_MONTH);</span><br><span class="line">System.out.println(max_day_of_month);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时钟：24小时制</span></span><br><span class="line"><span class="keyword">int</span> hour24 = cal.get(Calendar.HOUR_OF_DAY);</span><br><span class="line">System.out.println(hour24);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前时钟：12小时制</span></span><br><span class="line"><span class="keyword">int</span> hour12 = cal.get(Calendar.HOUR);</span><br><span class="line">System.out.println(hour12);</span><br><span class="line"></span><br><span class="line"><span class="comment">//星期几：用数字（1~7）表示（星期日~星期六），使用时通常会-1</span></span><br><span class="line"><span class="keyword">int</span> day_of_week = cal.get(Calendar.DAY_OF_WEEK) - <span class="number">1</span>;</span><br><span class="line">System.out.println(day_of_week);</span><br><span class="line"></span><br><span class="line"><span class="comment">//上午-0；下午-1</span></span><br><span class="line"><span class="keyword">int</span> amOrPm = cal.get(Calendar.AM_PM);</span><br><span class="line">System.out.println(amOrPm);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前年的第几周</span></span><br><span class="line"><span class="keyword">int</span> week_of_year = cal.get(Calendar.WEEK_OF_YEAR);</span><br><span class="line">System.out.println(week_of_year);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前月的星期数</span></span><br><span class="line"><span class="keyword">int</span> week_of_month = cal.get(Calendar.WEEK_OF_MONTH);</span><br><span class="line">System.out.println(week_of_month);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前月中的第几个星期</span></span><br><span class="line"><span class="keyword">int</span> day_of_week_in_month = cal.get(Calendar.DAY_OF_WEEK_IN_MONTH);</span><br><span class="line">System.out.println(day_of_week_in_month);</span><br><span class="line"></span><br><span class="line"><span class="comment">//当前年的第几天</span></span><br><span class="line"><span class="keyword">int</span> day_of_year = cal.get(Calendar.DAY_OF_YEAR);</span><br><span class="line">System.out.println(day_of_year);</span><br><span class="line"><span class="keyword">int</span> day_of_year = cal.get(Calendar.DAY_OF_YEAR);		<span class="comment">//day_of_year=27</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置时间与时间计算"><a href="#设置时间与时间计算" class="headerlink" title="设置时间与时间计算"></a>设置时间与时间计算</h4><p>基础够了</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ol>
+<li>Calendar 类区分不同的时区输出时间格式；</li>
+<li>Calendar 类的计算优势非常明显，不需要考虑每个月有多少天，非常便利。举个例子：如果要计算昨天的日期，你要考虑昨天是不是某月的最后一天，某年的最后一天，要考虑平年、闰年，考虑上个月是31天，30天，29天还是28天…但是Calendar类省去了你所有的顾虑，直接减1天就可以输出正确的日期了；</li>
+</ol>
 <hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#x33;&#48;&#x32;&#51;&#x30;&#x34;&#x37;&#x30;&#x33;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#109;">&#x31;&#x33;&#48;&#x32;&#51;&#x30;&#x34;&#x37;&#x30;&#x33;&#64;&#x71;&#113;&#x2e;&#x63;&#111;&#109;</a>(非本人)</p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44259720/article/details/86669177%E3%80%81https://blog.csdn.net/yx0628/article/details/79317440">https://blog.csdn.net/weixin_44259720/article/details/86669177、https://blog.csdn.net/yx0628/article/details/79317440</a></p>
 
       
 
@@ -203,11 +225,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
         		</li>
       		
 		</ul>
@@ -263,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/11/pat1001/" alt="微信分享二维码">
+      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/07/Calendar%E7%B1%BB/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +295,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/03/12/pat1002/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pat1002
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/02/28/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E4%B9%8B%E3%80%8Amysql%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E3%80%8B/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据库学习之《mysql必知必会》</div>
+    <a href="/2021/04/05/pat1009/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pat1009</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -315,7 +324,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1001-%E5%AE%B3%E6%AD%BB%E2%BC%88%E4%B8%8D%E5%81%BF%E5%91%BD%E7%9A%84-3n-1-%E7%8C%9C%E6%83%B3-15-%E6%A8%A1%E6%8B%9F"><span class="toc-number">1.</span> <span class="toc-text">1001. 害死⼈不偿命的(3n+1)猜想(15) [模拟]</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E4%B8%ADCalendar%E7%B1%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">Java中Calendar类的常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Calendar%E5%9F%BA%E7%A1%80%E4%BA%86%E8%A7%A3"><span class="toc-number">1.1.</span> <span class="toc-text">Calendar基础了解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%97%B6%E9%97%B4-get"><span class="toc-number">1.1.1.</span> <span class="toc-text">获取时间(get)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4-set"><span class="toc-number">1.1.2.</span> <span class="toc-text">设置时间(set)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97-add"><span class="toc-number">1.1.3.</span> <span class="toc-text">时间计算(add)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Calendar%E6%B7%B1%E5%85%A5%E4%BA%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">Calendar深入了解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text">原理简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E8%8E%B7%E5%8F%96"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">时间获取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">设置时间与时间计算</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

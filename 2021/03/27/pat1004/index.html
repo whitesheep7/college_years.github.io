@@ -16,7 +16,7 @@
 <meta property="og:description" content="1004. 成绩排名 (20) [查找元素]读⼊n名学⽣的姓名、学号、成绩，分别输出成绩最⾼和成绩最低学⽣的姓名和学号。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-27T06:34:53.933Z">
-<meta property="article:modified_time" content="2021-03-27T06:54:14.467Z">
+<meta property="article:modified_time" content="2021-04-06T10:02:57.898Z">
 <meta property="article:author" content="白羊">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="pat">
@@ -193,7 +193,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">int</span> n, max = <span class="number">-1</span>, min = <span class="number">101</span>, score;</span><br><span class="line"> <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"> <span class="built_in">string</span> maxname, minname, maxnum, minnum, name, num;</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"> <span class="built_in">cin</span> &gt;&gt; name &gt;&gt; num &gt;&gt; score;</span><br><span class="line"> <span class="keyword">if</span> (max &lt; score) &#123;</span><br><span class="line"> max = score;</span><br><span class="line"> maxname = name;</span><br><span class="line"> maxnum = num;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">if</span> (min &gt; score) &#123;</span><br><span class="line"> min = score;</span><br><span class="line"> minname = name;</span><br><span class="line"> minnum = num;</span><br><span class="line"> &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">cout</span> &lt;&lt; maxname &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; maxnum &lt;&lt; <span class="built_in">endl</span> &lt;&lt; minname &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; minnum;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#51;&#x30;&#50;&#51;&#x30;&#52;&#55;&#x30;&#x33;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#49;&#51;&#x30;&#50;&#51;&#x30;&#52;&#55;&#x30;&#x33;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#51;&#x30;&#50;&#x33;&#x30;&#52;&#x37;&#x30;&#51;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;">&#49;&#51;&#x30;&#50;&#x33;&#x30;&#52;&#x37;&#x30;&#51;&#64;&#113;&#x71;&#46;&#x63;&#111;&#x6d;</a>(非本人)</p>
 
       
 
@@ -421,6 +421,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java基础</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
