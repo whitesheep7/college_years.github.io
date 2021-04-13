@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>pat1011 | 白羊</title>
+  <title>Tag: 反编译 | 白羊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1010. A+B和C题⽬描述： 给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="pat1011">
-<meta property="og:url" content="http://example.com/2021/04/05/pat1011/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="白羊">
+<meta property="og:url" content="http://example.com/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="白羊">
-<meta property="og:description" content="1010. A+B和C题⽬描述： 给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-05T15:04:40.454Z">
-<meta property="article:modified_time" content="2021-04-06T10:37:57.270Z">
 <meta property="article:author" content="白羊">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="pat">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白羊" type="application/atom+xml">
@@ -152,188 +146,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pat1011" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      pat1011
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/04/13/%E5%8F%8D%E7%BC%96%E8%AF%91/" class="archive-article-date">
+  	<time datetime="2021-04-13T15:03:20.848Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-13</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/04/13/%E5%8F%8D%E7%BC%96%E8%AF%91/">反编译</a>
     </h1>
   
 
-        
-        <a href="/2021/04/05/pat1011/" class="archive-article-date">
-  	<time datetime="2021-04-05T15:04:40.454Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1010-A-B和C"><a href="#1010-A-B和C" class="headerlink" title="1010. A+B和C"></a>1010. A+B和C</h1><p>题⽬描述：</p>
-<p>给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。<a id="more"></a></p>
-<p>输⼊格式：</p>
-<p>输⼊第1⾏给出正整数T(&lt;=10)，是测试⽤例的个数。随后给出T组测试⽤例，每组占⼀⾏，顺序给出 A、B和C。整数间以空格分隔。</p>
-<p>输出格式：</p>
-<p>对每组测试⽤例，在⼀⾏中输出“Case #X: true”如果 A+B&gt;C，否则输出“Case #X: false”，其中X是测试⽤例的编号（从1开始）。</p>
-<p>输⼊样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">2147483647</span> <span class="number">0</span> <span class="number">2147483646</span></span><br><span class="line"><span class="number">0</span> -<span class="number">2147483648</span> -<span class="number">2147483647</span></span><br></pre></td></tr></table></figure>
-
-<p>输出样例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: false</span><br><span class="line">Case #2: true</span><br><span class="line">Case #3: true</span><br><span class="line">Case #4: false</span><br></pre></td></tr></table></figure>
-
-<p>分析：使⽤long long int存储a、b和c，当a + b &gt; c的时候输出true，否则输出false～</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">int</span> n;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> a, b, c;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %s\n&quot;</span>, i + <span class="number">1</span>, a + b &gt; c ? <span class="string">&quot;true&quot;</span> : <span class="string">&quot;false&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#51;&#48;&#x32;&#x33;&#x30;&#x34;&#x37;&#48;&#51;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#49;&#51;&#48;&#x32;&#x33;&#x30;&#x34;&#x37;&#48;&#51;&#x40;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a>(非本人)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">反编译</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/05/pat1011/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/04/05/pat1012/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          pat1012
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/04/05/pat1010/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pat1010</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1010-A-B%E5%92%8CC"><span class="toc-number">1.</span> <span class="toc-text">1010. A+B和C</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -356,9 +226,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
