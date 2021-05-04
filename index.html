@@ -148,32 +148,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-StringBuilder的capacity" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ArrayList与LinkedList" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/StringBuilder%E7%9A%84capacity/">StringBuilder的capacity</a>
+      <a class="article-title" href="/2021/05/04/ArrayList%E4%B8%8ELinkedList/">ArrayList与LinkedList</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/StringBuilder%E7%9A%84capacity/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.531Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/ArrayList%E4%B8%8ELinkedList/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当创建对象时赋值，它的值<code>capacaty+字符串的长度</code></p>
-<p>当对其进行<code>append，insert</code>增加时，<code>capacaty</code>变化和追加的字符串长度有关</p>
-<p>该<code>capacaty</code>规则对增加字符串长度的都满足，如<code>insert</code>，<code>append</code>，<code>replace</code></p>
-<p>同时继承的是<code>AbstractStringBuilder</code>，对<code>StringBuilder</code>和<code>StringBuffer</code>都满足
+        <h2 id="Java-ArrayList"><a href="#Java-ArrayList" class="headerlink" title="Java ArrayList"></a>Java ArrayList</h2><p>ArrayList 类是一个可以动态修改的数组，与普通数组的区别就是它是没有固定大小的限制，我们可以添加或删除元素。
         
-          <a class="article-more-a" href="/2021/04/26/StringBuilder%E7%9A%84capacity/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/ArrayList%E4%B8%8ELinkedList/#more">more >></a>
         
       
 
@@ -191,7 +188,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
         		</li>
       		
 		</ul>
@@ -201,7 +198,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/StringBuilder%E7%9A%84capacity/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/ArrayList%E4%B8%8ELinkedList/">展开全文 >></a>
         </p>
       
 
@@ -231,109 +228,29 @@
 
 
   
-    <article id="post-Random类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-旋转数组的最小数字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/Random%E7%B1%BB/">Random类</a>
+      <a class="article-title" href="/2021/05/04/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">IO</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/Random%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.522Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Random类（Java-util）"><a href="#Random类（Java-util）" class="headerlink" title="Random类（Java.util）"></a>Random类（Java.util）</h1><p>Random类中实现的随机算法是伪随机，也就是有规则的随机。在进行随机时，随机算法的起源数字称为种子数(seed)，在种子数的基础上进行一定的变换，从而产生需要的随机数字。
+        <h1 id="旋转数组的最小数字"><a href="#旋转数组的最小数字" class="headerlink" title="旋转数组的最小数字"></a>旋转数组的最小数字</h1><h3 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h3><p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。 输入一个非减排序的数组的一个旋转，输出旋转数组的最小元素。 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
         
-          <a class="article-more-a" href="/2021/04/26/Random%E7%B1%BB/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/Random%E7%B1%BB/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-pat1017" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/pat1017/">pat1017</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/26/pat1017/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.522Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1017-A除以B-⼤整数运算"><a href="#1017-A除以B-⼤整数运算" class="headerlink" title="1017. A除以B [⼤整数运算]"></a>1017. A除以B [⼤整数运算]</h1><p>本题要求计算A/B，其中A是不超过1000位的正整数，B是1位正整数。你需要输出商数Q和余数R， 使得A = B * Q + R成⽴。
-        
-          <a class="article-more-a" href="/2021/04/26/pat1017/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/#more">more >></a>
         
       
 
@@ -349,10 +266,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -361,7 +274,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/pat1017/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">展开全文 >></a>
         </p>
       
 
@@ -391,189 +304,29 @@
 
 
   
-    <article id="post-pat1018" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-网络编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/pat1018/">pat1018</a>
+      <a class="article-title" href="/2021/05/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">网络编程</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/pat1018/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.522Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1018-锤⼦剪⼑布-模拟"><a href="#1018-锤⼦剪⼑布-模拟" class="headerlink" title="1018. 锤⼦剪⼑布[模拟]"></a>1018. 锤⼦剪⼑布[模拟]</h1><p>⼤家应该都会玩“锤⼦剪⼑布”的游戏：两⼈同时给出⼿势，胜负规则如图所示： 现给出两⼈的交锋记录，请统计双⽅的胜、平、负次数，并且给出双⽅分别出什么⼿势的胜算最⼤。
+        <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="网络编程概述"><a href="#网络编程概述" class="headerlink" title="网络编程概述"></a>网络编程概述</h2><p>网络编程是指编写运行在多个设备（计算机）的程序，这些设备都通过网络连接起来。
         
-          <a class="article-more-a" href="/2021/04/26/pat1018/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/pat1018/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-pat1019" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/pat1019/">pat1019</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/26/pat1019/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.522Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1019-数字⿊洞-数学问题"><a href="#1019-数字⿊洞-数学问题" class="headerlink" title="1019.  数字⿊洞[数学问题]"></a>1019.  数字⿊洞[数学问题]</h1><p>给定任⼀个各位数字不完全相同的4位正整数，如果我们先把4个数字按⾮递增排序， 再按⾮递减排序，然后⽤第1个数字减第2个数字，将得到⼀个新的数字。⼀直重复 这样做，我们很快会停在有“数字⿊洞”之称的6174，这个神奇的数字也叫Kaprekar常数。 例如，我们从6767开始，将得到 7766 – 6677 = 1089 9810 – 0189 = 9621 9621 – 1269 = 8352 8532 – 2358 = 6174 7641 – 1467 = 6174 … … 现给定任意4位正整数，请编写程序演示到达⿊洞的过程。
-        
-          <a class="article-more-a" href="/2021/04/26/pat1019/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/pat1019/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Math类常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/Math%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">Math常用方法</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/26/Math%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.506Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Math常用方法"><a href="#Math常用方法" class="headerlink" title="Math常用方法"></a>Math常用方法
-        
-          <a class="article-more-a" href="/2021/04/26/Math%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/#more">more >></a>
         
       
 
@@ -591,7 +344,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络编程</a>
         		</li>
       		
 		</ul>
@@ -601,7 +354,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/Math%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">展开全文 >></a>
         </p>
       
 
@@ -631,29 +384,30 @@
 
 
   
-    <article id="post-Object老祖宗类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-IO与装饰器模式的不解之缘" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/Object%E8%80%81%E7%A5%96%E5%AE%97%E7%B1%BB/">Object老祖宗类</a>
+      <a class="article-title" href="/2021/05/04/IO%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%8D%E8%A7%A3%E4%B9%8B%E7%BC%98/">IO与装饰器模式的不解之缘</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/Object%E8%80%81%E7%A5%96%E5%AE%97%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.506Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/IO%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%8D%E8%A7%A3%E4%B9%8B%E7%BC%98/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Object老祖宗类"><a href="#Object老祖宗类" class="headerlink" title="Object老祖宗类"></a>Object老祖宗类</h1><p>　Object 类属于 java.lang 包，此包下的所有类在使用时无需手动导入，系统会在程序编译期间自动导入。Object 类是所有类的基类，当一个类没有直接继承某个类时，默认继承Object类，也就是说任何类都直接或间接继承此类，Object 类中能访问的方法在所有类中都可以调用，下面我们会分别介绍Object 类中的所有方法。
+        <h1 id="装饰器模式详解（与IO不解的情缘）"><a href="#装饰器模式详解（与IO不解的情缘）" class="headerlink" title="装饰器模式详解（与IO不解的情缘）"></a>装饰器模式详解（与IO不解的情缘）</h1><p><strong>定义：装饰模式是在不必改变原类文件和使用继承的情况下，动态的扩展一个对象的功能。它是通过创建一个包装对象，也就是装饰来包裹真实的对象。</strong></p>
+<p>这一个解释，引自百度百科，我们注意其中的几点。
         
-          <a class="article-more-a" href="/2021/04/26/Object%E8%80%81%E7%A5%96%E5%AE%97%E7%B1%BB/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/IO%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%8D%E8%A7%A3%E4%B9%8B%E7%BC%98/#more">more >></a>
         
       
 
@@ -671,7 +425,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IO</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
         		</li>
       		
 		</ul>
@@ -681,7 +439,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/Object%E8%80%81%E7%A5%96%E5%AE%97%E7%B1%BB/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/IO%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%B8%8D%E8%A7%A3%E4%B9%8B%E7%BC%98/">展开全文 >></a>
         </p>
       
 
@@ -711,29 +469,29 @@
 
 
   
-    <article id="post-File类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Iterator 与 ListIterator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/File%E7%B1%BB/">File类</a>
+      <a class="article-title" href="/2021/05/04/Iterator%20%E4%B8%8E%20ListIterator/">Iterator与ListIterator</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/File%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.499Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/Iterator%20%E4%B8%8E%20ListIterator/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h1><h2 id="1-1-File类说明"><a href="#1-1-File类说明" class="headerlink" title="1.1. File类说明"></a>1.1. File类说明</h2><p>存储在变量,数组和对象中的数据是暂时的,当程序终止时他们就会丢失.为了能够永久的保存程序中创建的数据,需要将他们存储到硬盘或光盘的文件中.这些文件可以移动,传送,亦可以被其他程序使用.由于数据存储在文件中,所以我们需要学习一个和文件有密切关系的类,叫做File类,将要掌握获取文件的属性以及删除和重命名文件.最终如何向文件中写入数据和从文件中读取数据。
+        <h2 id="Iterator（迭代器）"><a href="#Iterator（迭代器）" class="headerlink" title="Iterator（迭代器）"></a>Iterator（迭代器）</h2><p>Java Iterator（迭代器）不是一个集合，它是一种用于访问集合的方法，可用于迭代 <a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-arraylist.html">ArrayList</a> 和 <a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-hashset.html">HashSet</a> 等集合。
         
-          <a class="article-more-a" href="/2021/04/26/File%E7%B1%BB/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/Iterator%20%E4%B8%8E%20ListIterator/#more">more >></a>
         
       
 
@@ -751,7 +509,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
         		</li>
       		
 		</ul>
@@ -761,7 +519,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/File%E7%B1%BB/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/Iterator%20%E4%B8%8E%20ListIterator/">展开全文 >></a>
         </p>
       
 
@@ -791,29 +549,29 @@
 
 
   
-    <article id="post-String类常用方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-红黑树" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/String%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">String类</a>
+      <a class="article-title" href="/2021/05/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">红黑树</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/String%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.490Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/%E7%BA%A2%E9%BB%91%E6%A0%91/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类
+        <h1 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h1><p>要说的红黑树就是就是一颗非严格均衡的二叉树，均衡二叉树又是在二叉搜索树的基础上增加了自动维持平衡的性质，插入、搜索、删除的效率都比较高。红黑树也是实现TreeMap存储结构的基石。典型的用途是实现关联数组.
         
-          <a class="article-more-a" href="/2021/04/26/String%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/%E7%BA%A2%E9%BB%91%E6%A0%91/#more">more >></a>
         
       
 
@@ -827,11 +585,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
         		</li>
       		
 		</ul>
@@ -841,7 +599,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/String%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/%E7%BA%A2%E9%BB%91%E6%A0%91/">展开全文 >></a>
         </p>
       
 
@@ -871,31 +629,29 @@
 
 
   
-    <article id="post-StringBuilder与StringBufer区别于联系" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-集合概述" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/26/StringBuilder%E4%B8%8EStringBufer%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/">StringBuilder、StringBufer常用方法</a>
+      <a class="article-title" href="/2021/05/04/%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/">集合框架</a>
     </h1>
   
 
         
-        <a href="/2021/04/26/StringBuilder%E4%B8%8EStringBufer%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/" class="archive-article-date">
-  	<time datetime="2021-04-26T04:15:07.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
+        <a href="/2021/05/04/%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="StringBuilder、StringBufer常用方法"><a href="#StringBuilder、StringBufer常用方法" class="headerlink" title="StringBuilder、StringBufer常用方法"></a>StringBuilder、StringBufer常用方法</h1><h2 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h2><p>StringBuilder 是一个可变的字符序列。它继承于AbstractStringBuilder，实现了CharSequence接口。</p>
-<p>StringBuffer 是一个线程安全的可变的字符序列。它继承于AbstractStringBuilder，实现了CharSequence接口。</p>
-<p>StringBuilder和StringBuffer不同，前者是非线程安全的，后者是线程安全的。
+        <h1 id="Java-集合框架"><a href="#Java-集合框架" class="headerlink" title="Java 集合框架"></a>Java 集合框架</h1><h2 id="一、集合的由来"><a href="#一、集合的由来" class="headerlink" title="一、集合的由来"></a>一、集合的由来</h2><p>通常，我们的程序需要根据程序运行时才知道创建多少个对象。
         
-          <a class="article-more-a" href="/2021/04/26/StringBuilder%E4%B8%8EStringBufer%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/#more">more >></a>
+          <a class="article-more-a" href="/2021/05/04/%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/#more">more >></a>
         
       
 
@@ -913,7 +669,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
         		</li>
       		
 		</ul>
@@ -923,7 +679,247 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/26/StringBuilder%E4%B8%8EStringBufer%E5%8C%BA%E5%88%AB%E4%BA%8E%E8%81%94%E7%B3%BB/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/05/04/%E9%9B%86%E5%90%88%E6%A6%82%E8%BF%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-多线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.558Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>﻿笔记来自于狂神说琴疆老师<a target="_blank" rel="noopener" href="https://space.bilibili.com/95256449?spm_id_from=333.788.b_765f7570696e666f.1"> b站up主</a>
+        
+          <a class="article-more-a" href="/2021/05/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">多线程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/04/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-IO" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/04/IO/">IO</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/04/IO/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.550Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、IO概要"><a href="#1、IO概要" class="headerlink" title="1、IO概要"></a>1、IO概要</h2><p>在整个Java.io包中最重要的就是5个类和一个接口。5个类指的是File、OutputStream、InputStream、Writer、Reader；一个接口指的是Serializable.掌握了这些IO的核心操作那么对于Java中的IO体系也就有了一个初步的认识了。
+        
+          <a class="article-more-a" href="/2021/05/04/IO/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IO</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/04/IO/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-HashSet与HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/04/HashSet%E4%B8%8EHashMap/">HashSet与HashMap</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/04/HashSet%E4%B8%8EHashMap/" class="archive-article-date">
+  	<time datetime="2021-05-04T06:46:35.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="HashSet与HashMap"><a href="#HashSet与HashMap" class="headerlink" title="HashSet与HashMap"></a>HashSet与HashMap
+        
+          <a class="article-more-a" href="/2021/05/04/HashSet%E4%B8%8EHashMap/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">java基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">集合</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/04/HashSet%E4%B8%8EHashMap/">展开全文 >></a>
         </p>
       
 
@@ -955,7 +951,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1046,7 +1042,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">常用类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1054,7 +1066,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
+                <a href="javascript:void(0)" class="js-tag color5">更多知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1070,15 +1082,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">更多知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">互联网</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,11 +1102,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">服务器</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1103,6 +1119,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
             
             <div class="clearfix"></div>
