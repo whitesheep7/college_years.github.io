@@ -193,7 +193,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">char</span> a, <span class="keyword">char</span> b)</span> </span>&#123;<span class="keyword">return</span> a &gt; b;&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">	s.insert(<span class="number">0</span>, <span class="number">4</span> - s.length(), <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		<span class="built_in">string</span> a = s, b = s;</span><br><span class="line">		sort(a.begin(), a.end(), cmp);</span><br><span class="line">		sort(b.begin(), b.end());</span><br><span class="line">		<span class="keyword">int</span> result = stoi(a) - stoi(b);</span><br><span class="line">		s = to_string(result);</span><br><span class="line">		s.insert(<span class="number">0</span>, <span class="number">4</span> - s.length(), <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="string">&quot; - &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; = &quot;</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125; <span class="keyword">while</span> (s != <span class="string">&quot;6174&quot;</span> &amp;&amp; s != <span class="string">&quot;0000&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#51;&#x30;&#x32;&#51;&#x30;&#52;&#x37;&#48;&#x33;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;">&#x31;&#51;&#x30;&#x32;&#51;&#x30;&#52;&#x37;&#48;&#x33;&#x40;&#113;&#x71;&#x2e;&#x63;&#111;&#x6d;</a>(非本人)</p>
+<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#x33;&#x30;&#x32;&#x33;&#48;&#x34;&#55;&#48;&#x33;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;">&#49;&#x33;&#x30;&#x32;&#x33;&#48;&#x34;&#55;&#48;&#x33;&#x40;&#x71;&#113;&#x2e;&#99;&#111;&#x6d;</a>(非本人)</p>
 
       
 
@@ -281,18 +281,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/26/pat1017/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/26/pat1018/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          pat1017
+          pat1018
         
       </div>
     </a>
   
   
-    <a href="/2021/04/26/pat1018/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pat1018</div>
+    <a href="/2021/04/26/Math%E7%B1%BB%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Math常用方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -451,6 +451,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">更多知识</a>
               </li>
              
@@ -460,10 +464,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">pat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
