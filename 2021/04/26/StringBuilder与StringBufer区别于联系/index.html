@@ -16,7 +16,7 @@
 <meta property="og:description" content="StringBuilder、StringBufer常用方法区别与联系StringBuilder 是一个可变的字符序列。它继承于AbstractStringBuilder，实现了CharSequence接口。 StringBuffer 是一个线程安全的可变的字符序列。它继承于AbstractStringBuilder，实现了CharSequence接口。 StringBuilder和StringBu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-26T04:15:07.457Z">
-<meta property="article:modified_time" content="2021-04-26T04:13:52.904Z">
+<meta property="article:modified_time" content="2021-05-04T14:59:35.281Z">
 <meta property="article:author" content="白羊">
 <meta property="article:tag" content="java基础">
 <meta property="article:tag" content="常用类">
@@ -183,7 +183,7 @@
 
 <h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sbuilder;</span><br><span class="line"></span><br><span class="line">sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0123456789&quot;</span>);</span><br><span class="line">sbuilder.replace(<span class="number">0</span>, <span class="number">3</span>, <span class="string">&quot;ABCDE&quot;</span>);</span><br><span class="line">System.out.printf(<span class="string">&quot;sbuilder=%s\n&quot;</span>, sbuilder);</span><br><span class="line"></span><br><span class="line">sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0123456789&quot;</span>);</span><br><span class="line">sbuilder.reverse();</span><br><span class="line">System.out.printf(<span class="string">&quot;sbuilder=%s\n&quot;</span>, sbuilder);</span><br><span class="line"></span><br><span class="line">sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0123456789&quot;</span>);</span><br><span class="line">sbuilder.setCharAt(<span class="number">0</span>, <span class="string">&#x27;M&#x27;</span>);</span><br><span class="line">System.out.printf(<span class="string">&quot;sbuilder=%s\n&quot;</span>, sbuilder);</span><br></pre></td></tr></table></figure>
 
-<h2 id="delate"><a href="#delate" class="headerlink" title="delate"></a>delate</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0123456789&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除位置0的字符，剩余字符是“123456789”。</span></span><br><span class="line">sbuilder.deleteCharAt(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 删除位置3(包括)到位置6(不包括)之间的字符，剩余字符是“123789”。</span></span><br><span class="line">sbuilder.delete(<span class="number">3</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取sb中从位置1开始的字符串</span></span><br><span class="line">String str1 = sbuilder.substring(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 获取sb中从位置3(包括)到位置5(不包括)之间的字符串</span></span><br><span class="line">String str2 = sbuilder.substring(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// 获取sb中从位置3(包括)到位置5(不包括)之间的字符串，获取的对象是CharSequence对象，此处转型为String</span></span><br><span class="line">String str3 = (String)sbuilder.subSequence(<span class="number">3</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;0123456789&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除位置0的字符，剩余字符是“123456789”。</span></span><br><span class="line">sbuilder.deleteCharAt(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 删除位置3(包括)到位置6(不包括)之间的字符，剩余字符是“123789”。</span></span><br><span class="line">sbuilder.delete(<span class="number">3</span>,<span class="number">6</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取sb中从位置1开始的字符串</span></span><br><span class="line">String str1 = sbuilder.substring(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 获取sb中从位置3(包括)到位置5(不包括)之间的字符串</span></span><br><span class="line">String str2 = sbuilder.substring(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// 获取sb中从位置3(包括)到位置5(不包括)之间的字符串，获取的对象是CharSequence对象，此处转型为String</span></span><br><span class="line">String str3 = (String)sbuilder.subSequence(<span class="number">3</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder sbuilder = <span class="keyword">new</span> StringBuilder(<span class="string">&quot;abcAbcABCabCaBcAbCaBCabc&quot;</span>);</span><br><span class="line">System.out.printf(<span class="string">&quot;sbuilder=%s\n&quot;</span>, sbuilder);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 从前往后，找出&quot;bc&quot;第一次出现的位置</span></span><br><span class="line">System.out.printf(<span class="string">&quot;%-30s = %d\n&quot;</span>, <span class="string">&quot;sbuilder.indexOf(\&quot;bc\&quot;)&quot;</span>, sbuilder.indexOf(<span class="string">&quot;bc&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 从位置5开始，从前往后，找出&quot;bc&quot;第一次出现的位置</span></span><br><span class="line">System.out.printf(<span class="string">&quot;%-30s = %d\n&quot;</span>, <span class="string">&quot;sbuilder.indexOf(\&quot;bc\&quot;, 5)&quot;</span>, sbuilder.indexOf(<span class="string">&quot;bc&quot;</span>, <span class="number">5</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 从后往前，找出&quot;bc&quot;第一次出现的位置</span></span><br><span class="line">System.out.printf(<span class="string">&quot;%-30s = %d\n&quot;</span>, <span class="string">&quot;sbuilder.lastIndexOf(\&quot;bc\&quot;)&quot;</span>, sbuilder.lastIndexOf(<span class="string">&quot;bc&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 从位置4开始，从后往前，找出&quot;bc&quot;第一次出现的位置</span></span><br><span class="line">System.out.printf(<span class="string">&quot;%-30s = %d\n&quot;</span>, <span class="string">&quot;sbuilder.lastIndexOf(\&quot;bc\&quot;, 4)&quot;</span>, sbuilder.lastIndexOf(<span class="string">&quot;bc&quot;</span>, <span class="number">4</span>));</span><br></pre></td></tr></table></figure>
 
@@ -324,7 +324,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#StringBuilder%E3%80%81StringBufer%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">StringBuilder、StringBufer常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">区别与联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">1.2.</span> <span class="toc-text">insert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#append"><span class="toc-number">1.3.</span> <span class="toc-text">append</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">1.4.</span> <span class="toc-text">replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delate"><span class="toc-number">1.5.</span> <span class="toc-text">delate</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#index"><span class="toc-number">1.6.</span> <span class="toc-text">index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A9%E4%B8%8B%E7%9A%84API"><span class="toc-number">1.7.</span> <span class="toc-text">剩下的API</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#StringBuilder%E3%80%81StringBufer%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">StringBuilder、StringBufer常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8E%E8%81%94%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">区别与联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insert"><span class="toc-number">1.2.</span> <span class="toc-text">insert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#append"><span class="toc-number">1.3.</span> <span class="toc-text">append</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#replace"><span class="toc-number">1.4.</span> <span class="toc-text">replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delete"><span class="toc-number">1.5.</span> <span class="toc-text">delete</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#index"><span class="toc-number">1.6.</span> <span class="toc-text">index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A9%E4%B8%8B%E7%9A%84API"><span class="toc-number">1.7.</span> <span class="toc-text">剩下的API</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -432,11 +432,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集合</a>
+                <a href="javascript:void(0)" class="js-tag color4">常用类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">常用类</a>
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,6 +448,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Lambda</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
               </li>
              
@@ -456,11 +460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">更多知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">更多知识</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,6 +509,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MyBatisPlus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">注解反射</a>
               </li>
              
               <li class="article-tag-list-item">
