@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>pat1011 | 白羊</title>
+  <title>Linux磁盘管理进程管理 | 白羊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1010. A+B和C题⽬描述： 给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。">
+  <meta name="description" content="磁盘管理Linux磁盘管理好换直接关系到整个系统的性能问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pat1011">
-<meta property="og:url" content="http://example.com/2021/04/05/pat1011/index.html">
+<meta property="og:title" content="Linux磁盘管理进程管理">
+<meta property="og:url" content="http://example.com/2021/06/01/Linxu%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E7%BB%A7%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/index.html">
 <meta property="og:site_name" content="白羊">
-<meta property="og:description" content="1010. A+B和C题⽬描述： 给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。">
+<meta property="og:description" content="磁盘管理Linux磁盘管理好换直接关系到整个系统的性能问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-05T15:04:40.454Z">
-<meta property="article:modified_time" content="2021-04-06T10:37:57.270Z">
+<meta property="article:published_time" content="2021-06-01T04:45:46.566Z">
+<meta property="article:modified_time" content="2021-06-03T08:20:36.517Z">
 <meta property="article:author" content="白羊">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="pat">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白羊" type="application/atom+xml">
@@ -152,43 +151,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-pat1011" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linxu磁盘管理继进程管理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      pat1011
+      Linux磁盘管理进程管理
     </h1>
   
 
         
-        <a href="/2021/04/05/pat1011/" class="archive-article-date">
-  	<time datetime="2021-04-05T15:04:40.454Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-05</time>
+        <a href="/2021/06/01/Linxu%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E7%BB%A7%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-06-01T04:45:46.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1010-A-B和C"><a href="#1010-A-B和C" class="headerlink" title="1010. A+B和C"></a>1010. A+B和C</h1><p>题⽬描述：</p>
-<p>给定区间[-2^31, 2^31]内的3个整数A、B和C，请判断A+B是否⼤于C。<a id="more"></a></p>
-<p>输⼊格式：</p>
-<p>输⼊第1⾏给出正整数T(&lt;=10)，是测试⽤例的个数。随后给出T组测试⽤例，每组占⼀⾏，顺序给出 A、B和C。整数间以空格分隔。</p>
-<p>输出格式：</p>
-<p>对每组测试⽤例，在⼀⾏中输出“Case #X: true”如果 A+B&gt;C，否则输出“Case #X: false”，其中X是测试⽤例的编号（从1开始）。</p>
-<p>输⼊样例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">2147483647</span> <span class="number">0</span> <span class="number">2147483646</span></span><br><span class="line"><span class="number">0</span> -<span class="number">2147483648</span> -<span class="number">2147483647</span></span><br></pre></td></tr></table></figure>
+        <h1 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h1><p>Linux磁盘管理好换直接关系到整个系统的性能问题<a id="more"></a></p>
+<p>Linux磁盘管理常用三个命令为 df、du 和 fdisk.</p>
+<ul>
+<li>df：列出文件系统的整体磁盘使用量</li>
+<li>du：检查磁盘空间使用量</li>
+<li>fdisk：用于磁盘分区</li>
+</ul>
+<h2 id="df"><a href="#df" class="headerlink" title="df"></a>df</h2><p>df 命令参数功能：检查文件系统的磁盘空间占用情况。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df [-ahikHTm] [目录或文件名]</span><br></pre></td></tr></table></figure>
 
-<p>输出样例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: false</span><br><span class="line">Case #2: true</span><br><span class="line">Case #3: true</span><br><span class="line">Case #4: false</span><br></pre></td></tr></table></figure>
+<p>选项与参数：</p>
+<ul>
+<li>-a：列出所有的文件系统，包括系统特有的<code>/proc</code>等文件系统；</li>
+<li>-k：以<code>KBytes</code>的容量显示各文件系统；</li>
+<li>-m：以<code>MBytes</code>的容量显示各文件系统；</li>
+<li>-h：以人们较易阅读的<code>GBytes, MBytes, KBytes</code>等格式自行显示；</li>
+<li>-H：以 M=1000K 取代 M=1024K 的进位方式；</li>
+<li>-T：显示文件系统类型, 连同该<code>partition</code>的<code>filesystem</code>名称 (例如 ext3) 也列出；</li>
+<li>-i：不用硬盘容量，而以<code>inode</code>的数量来显示</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@touchingwang ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem      Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs        858M     0  858M   0% /dev</span><br><span class="line">tmpfs           868M     0  868M   0% /dev/shm</span><br><span class="line">tmpfs           868M  640K  867M   1% /run</span><br><span class="line">tmpfs           868M     0  868M   0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1        40G  2.0G   36G   6% /</span><br><span class="line">tmpfs           174M     0  174M   0% /run/user/0</span><br><span class="line">tmpfs           174M     0  174M   0% /run/user/1000</span><br></pre></td></tr></table></figure>
 
-<p>分析：使⽤long long int存储a、b和c，当a + b &gt; c的时候输出true，否则输出false～</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">int</span> n;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line"> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> a, b, c;</span><br><span class="line"> <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %s\n&quot;</span>, i + <span class="number">1</span>, a + b &gt; c ? <span class="string">&quot;true&quot;</span> : <span class="string">&quot;false&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="du"><a href="#du" class="headerlink" title="du"></a>du</h2><p>Linux du 命令也是查看使用空间的，但是与 df 命令不同的是 Linux du 命令是对文件和目录磁盘使用的空间的查看，还是和 df 命令有一些区别的，这里介绍了 Linux du 命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du [-ahskm] 文件或目录名称</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#x33;&#48;&#50;&#x33;&#x30;&#52;&#55;&#48;&#x33;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#x31;&#x33;&#48;&#50;&#x33;&#x30;&#52;&#55;&#48;&#x33;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a>(非本人)</p>
+<p>选项与参数：</p>
+<ul>
+<li>-a ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。</li>
+<li>-h ：以人们较易读的容量格式 (G/M) 显示；</li>
+<li>-s ：列出总量而已，而不列出每个各别的目录占用容量；</li>
+<li>-S ：不包括子目录下的总计，与 -s 有点差别。</li>
+<li>-k ：以 KBytes 列出容量显示；</li>
+<li>-m ：以 MBytes 列出容量显示；</li>
+</ul>
+<p>直接输入 du 没有加任何选项时，则 du 会分析当前所在目录的文件与目录所占用的硬盘空间。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查根目录底下每个目录所占用的容量</span></span><br><span class="line">[root@www ~]<span class="comment"># du -sm /*</span></span><br><span class="line">7       /bin</span><br><span class="line">6       /boot</span><br><span class="line">.....中间省略....</span><br><span class="line">0       /proc</span><br><span class="line">.....中间省略....</span><br><span class="line">1       /tmp</span><br><span class="line">3859    /usr     &lt;==系统初期最大就是他了啦！</span><br><span class="line">77      /var</span><br></pre></td></tr></table></figure>
+
+<h2 id="fdisk"><a href="#fdisk" class="headerlink" title="fdisk"></a>fdisk</h2><p>fdisk 是 Linux 的磁盘分区表操作工具。</p>
+<p>语法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk [-l] 装置名称</span><br></pre></td></tr></table></figure>
+
+<p>选项与参数：</p>
+<ul>
+<li>-l ：输出后面接的装置所有的分区内容。若仅有 fdisk -l 时， 则系统将会把整个系统内能够搜寻到的装置的分区均列出来。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有分区信息</span></span><br><span class="line">[root@touchingwang ~]<span class="comment"># fdisk -l</span></span><br><span class="line"></span><br><span class="line">Disk /dev/vda: 42.9 GB, 42949672960 bytes, 83886080 sectors</span><br><span class="line">Units = sectors of 1 * 512 = 512 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk label <span class="built_in">type</span>: dos</span><br><span class="line">Disk identifier: 0x0002b49c</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *        2048    83886046    41941999+  83  Linux</span><br></pre></td></tr></table></figure>
+
+<h1 id="进程管理"><a href="#进程管理" class="headerlink" title="进程管理"></a>进程管理</h1><p>对于我们开发人员来说，其实Linux更多偏向于使用即可！</p>
+<h2 id="什么是进程"><a href="#什么是进程" class="headerlink" title="什么是进程"></a>什么是进程</h2><ol>
+<li>在Linux中，每一个进程都是有自己的一个进程，每一个进程都有一个 id 号！</li>
+<li>每一个进程都会有一个父进程！</li>
+<li>进程可以有两种存在方式：前台！后台运行！</li>
+<li>一般的话服务都是后台运行的，基本的程序都是前台运行的！</li>
+</ol>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>ps 查看当前系统中正在执行的各种进程的信息！</p>
+<p>ps -xx：</p>
+<ul>
+<li>-a：显示当前终端运行的所有的进程信息</li>
+<li>-u：以用户的信息显示进程</li>
+<li>-x：显示后台运行进程的参数！</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ps -aux	<span class="comment"># 查看所有的进程</span></span><br><span class="line">ps -aux |grep mysql </span><br><span class="line">ps -aux |grep redis</span><br><span class="line"></span><br><span class="line"> <span class="comment"># |	在Linux这个叫做管道符	A|B</span></span><br><span class="line"> <span class="comment"># grep 查找文件中符合条件的字符串！</span></span><br></pre></td></tr></table></figure>
+
+<p>对于我们来说，这里只需要记住一个命令即可，ps -xx|grep 进程名字！过滤进程信息！</p>
+<p>ps -ef：可以查看到父进程的信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep mysql <span class="comment">#看父进程我们一般可以通过目录结构来查看！</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 进程树</span></span><br><span class="line">pstree</span><br><span class="line">	-p	显示父id	</span><br><span class="line">	-u	显示用户组</span><br></pre></td></tr></table></figure>
+
+<p>结束进程：杀掉进程，等价于 window 结束任务！</p>
+<p><code>kill -9 进程id</code></p>
+<p>我们平时写的一些java代码死循环了，可以选择结束进程。</p>
 
       
 
@@ -202,11 +254,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">pat</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		
 		</ul>
@@ -262,7 +310,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/04/05/pat1011/" alt="微信分享二维码">
+      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/01/Linxu%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E7%BB%A7%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,18 +324,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/05/pat1013/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/01/pat1025/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          pat1013
+          pat1025
         
       </div>
     </a>
   
   
-    <a href="/2021/04/05/pat1010/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pat1010</div>
+    <a href="/2021/05/09/pat1021/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pat1021</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -314,7 +362,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1010-A-B%E5%92%8CC"><span class="toc-number">1.</span> <span class="toc-text">1010. A+B和C</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">磁盘管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#df"><span class="toc-number">1.1.</span> <span class="toc-text">df</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#du"><span class="toc-number">1.2.</span> <span class="toc-text">du</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fdisk"><span class="toc-number">1.3.</span> <span class="toc-text">fdisk</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">进程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">什么是进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">2.2.</span> <span class="toc-text">命令</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

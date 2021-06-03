@@ -187,7 +187,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> 	<span class="keyword">int</span> first, k, n, temp;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; first &gt;&gt; n &gt;&gt; k;</span><br><span class="line"> 	<span class="keyword">int</span> data[<span class="number">100005</span>], next[<span class="number">100005</span>], <span class="built_in">list</span>[<span class="number">100005</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; data[temp] &gt;&gt; next[temp];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;<span class="comment">//不⼀定所有的输⼊的结点都是有⽤的，加个计数器</span></span><br><span class="line">	<span class="keyword">while</span> (first != <span class="number">-1</span>) &#123;</span><br><span class="line">		<span class="built_in">list</span>[sum++] = first;</span><br><span class="line">		first = next[first];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; (sum - sum % k); i += k)</span><br><span class="line">		reverse(begin(<span class="built_in">list</span>) + i, begin(<span class="built_in">list</span>) + i + k);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sum - <span class="number">1</span>; i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%05d %d %05d\n&quot;</span>, <span class="built_in">list</span>[i], data[<span class="built_in">list</span>[i]], <span class="built_in">list</span>[i + <span class="number">1</span>]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%05d %d -1&quot;</span>, <span class="built_in">list</span>[sum - <span class="number">1</span>], data[<span class="built_in">list</span>[sum - <span class="number">1</span>]]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#x33;&#x30;&#x32;&#x33;&#48;&#x34;&#55;&#48;&#x33;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;">&#x31;&#x33;&#x30;&#x32;&#x33;&#48;&#x34;&#55;&#48;&#x33;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;</a>(非本人)</p>
+<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#51;&#x30;&#x32;&#51;&#48;&#x34;&#55;&#x30;&#51;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x31;&#51;&#x30;&#x32;&#51;&#48;&#x34;&#55;&#x30;&#51;&#x40;&#x71;&#x71;&#x2e;&#99;&#111;&#x6d;</a>(非本人)</p>
 
       
 
@@ -275,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/06/01/pat1023/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/06/01/pat1024/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          pat1023
+          pat1024
         
       </div>
     </a>
   
   
-    <a href="/2021/05/09/pat1021/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pat1021</div>
+    <a href="/2021/06/01/Linxu%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86%E7%BB%A7%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux磁盘管理进程管理</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -437,6 +437,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">MYSQL</a>
               </li>
              
@@ -473,11 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">博客搭建</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
