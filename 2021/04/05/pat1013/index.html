@@ -187,7 +187,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;				<span class="comment">//判断传过来的是不是质数，如果不是返回false，是返回true</span></span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= a; i++)</span><br><span class="line"> <span class="keyword">if</span>(a % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"> <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">int</span> M, N, num = <span class="number">2</span>, cnt = <span class="number">0</span>;</span><br><span class="line"> <span class="built_in">cin</span> &gt;&gt; M &gt;&gt; N;</span><br><span class="line"> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line"> <span class="keyword">while</span> (cnt &lt; N) &#123;	</span><br><span class="line">     <span class="keyword">if</span> (isprime(num)) &#123;</span><br><span class="line">         cnt++;</span><br><span class="line">     <span class="keyword">if</span> (cnt &gt;= M) v.push_back(num);</span><br><span class="line">     &#125;</span><br><span class="line">     num++;</span><br><span class="line"> &#125;</span><br><span class="line">    </span><br><span class="line"> cnt = <span class="number">0</span>;	<span class="comment">//剩下部分用来解决输出相关问题，包括空格、一行10个</span></span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v.size(); i++) &#123;</span><br><span class="line">     cnt++;</span><br><span class="line">     <span class="keyword">if</span> (cnt % <span class="number">10</span> != <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, v[i]);</span><br><span class="line">     <span class="keyword">if</span> (cnt % <span class="number">10</span> == <span class="number">0</span>) <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p>本系列(PAT算法)作者mail：<a href="mailto:&#49;&#x33;&#x30;&#x32;&#51;&#48;&#x34;&#55;&#48;&#51;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;">&#49;&#x33;&#x30;&#x32;&#51;&#48;&#x34;&#55;&#48;&#51;&#64;&#x71;&#x71;&#x2e;&#99;&#x6f;&#x6d;</a>(非本人)</p>
+<p>本系列(PAT算法)作者mail：<a href="mailto:&#x31;&#51;&#x30;&#50;&#x33;&#x30;&#52;&#55;&#48;&#x33;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#x31;&#51;&#x30;&#50;&#x33;&#x30;&#52;&#55;&#48;&#x33;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109;</a>(非本人)</p>
 
       
 
@@ -275,18 +275,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/04/05/pat1012/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/05/pat1008/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          pat1012
+          pat1008
         
       </div>
     </a>
   
   
-    <a href="/2021/04/05/pat1011/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pat1011</div>
+    <a href="/2021/04/05/pat1012/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">pat1012</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -421,11 +421,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">集合</a>
+                <a href="javascript:void(0)" class="js-tag color4">常用类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">常用类</a>
+                <a href="javascript:void(0)" class="js-tag color3">集合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,15 +465,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">互联网</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">学习笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
              
               <li class="article-tag-list-item">
