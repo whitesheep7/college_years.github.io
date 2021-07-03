@@ -6,20 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>翻墙(上) | 白羊</title>
+  <title>Tag: jvm | 白羊</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="所谓翻墙，是指绕过相应的IP封锁、内容过滤、域名劫持、流量限制等，实现对网络内容的访问。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="翻墙(上)">
-<meta property="og:url" content="http://example.com/2021/02/25/%E7%BF%BB%E5%A2%99-%E4%B8%8A%EF%BC%89/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="白羊">
+<meta property="og:url" content="http://example.com/tags/jvm/index.html">
 <meta property="og:site_name" content="白羊">
-<meta property="og:description" content="所谓翻墙，是指绕过相应的IP封锁、内容过滤、域名劫持、流量限制等，实现对网络内容的访问。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-02-25T02:03:23.942Z">
-<meta property="article:modified_time" content="2021-07-02T12:25:04.990Z">
 <meta property="article:author" content="白羊">
-<meta property="article:tag" content="离散知识">
-<meta property="article:tag" content="IP封锁">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="白羊" type="application/atom+xml">
@@ -70,7 +64,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 86
+			总文章数 90
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -161,329 +155,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-翻墙-上）" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      翻墙(上)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/06/27/GC%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2021-06-27T11:05:31.081Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-27</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/06/27/GC%E5%9F%BA%E7%A1%80/">Java Garbage Collection Basics（GC基础）</a>
     </h1>
   
 
-        
-        <a href="/2021/02/25/%E7%BF%BB%E5%A2%99-%E4%B8%8A%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2021-02-25T02:03:23.942Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>所谓翻墙，是指绕过相应的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IP封锁">IP封锁</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/内容过滤/10961358">内容过滤</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/域名劫持/7657893">域名劫持</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/流量限制/9100305">流量限制</a>等，实现对网络内容的访问。<a id="more"></a>境外公司曾发布几款突破网络封锁以访问海外<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/敏感/1461693">敏感</a>网站或邮件的翻墙软件。由于此类软件不断升级，要实现对该类软件行为的监测或封锁就显得尤为困难和重要，如果能够在网关处将数据截获，分析数据包的行为特征，将部分数据包进行劫持还原，这将对公安机关的调查取证起到积极的作用。</p>
-<p>该解释引自《典型翻墙软件的网络通信特征研究》，作者官国静，此外我还会讲解一下它的这篇文章</p>
-<p>由于内容过多下半部分放在了下一篇，想了解关于软件和caj文件解释的可以看看，以下定义摘抄自百度，为了是能够自己了解所以写在了下面，觉得不够详细的可以百度搜索。</p>
-<h2 id="1、ip-封锁（IP-Block）"><a href="#1、ip-封锁（IP-Block）" class="headerlink" title="1、ip 封锁（IP Block）"></a>1、ip 封锁（IP Block）</h2><p>ip 封锁是指<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/防火墙/52767">防火墙</a>维护一张 ip 黑名单，一旦发现发往黑名单中地址的请求<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数据包/489739">数据包</a>，就直接将其丢弃，这将导致源<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/主机/455151">主机</a>得不到目标主机的及时响应而引发超时，从而达到屏蔽对目标主机的访问的目的。</p>
-<ul>
-<li>缺点：采用黑名单禁止模式有一定的漏洞</li>
-<li>目的：屏蔽对目的主机的访问</li>
-</ul>
-<p>提供服务的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/服务器">服务器</a>亦可能使用类似的方法，以控制可存取的范围，通常可设定白名单只允许某个网段或某个国家的 ip 存取，也可设定黑名单以禁止某网段或某些国家的 ip 存取。例如一些线上游戏营运商或线上影片服务为确保本国玩家的权益及版权限制，只允许本国的 ip 连线。</p>
-<h3 id="缺点￥"><a href="#缺点￥" class="headerlink" title="缺点￥"></a>缺点￥</h3><p>这种对被封禁的网站采用黑名单而不是对被允许访问的网站采用白名单的过滤机制，难免会有漏网之鱼的存在。</p>
-<h3 id="常见情况"><a href="#常见情况" class="headerlink" title="常见情况"></a>常见情况</h3><p>封锁  ip — 当计算机或系统受到外部攻击时，管理员可以通过屏蔽攻击源 ip 地址来抵御攻击。通过<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/防火墙/52767">防火墙</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/路由器/108294">路由器</a>配置，可以封锁某个 ip，禁止与其连接，从而达到抵御攻击的作用。但事实上大多数的攻击，管理员根本没有时间反应，一般在反应过来后系统已经崩溃。</p>
-<p>1、多次发布谩骂、侮辱言论；</p>
-<p>2、发布大量商业广告、或无用废帖（即 “爆吧” ）</p>
-<p>3、其他严重违反贴吧规定的情况。</p>
-<h2 id="2、内容过滤content-filter"><a href="#2、内容过滤content-filter" class="headerlink" title="2、内容过滤content filter"></a>2、内容过滤content filter</h2><p>内容过滤是对网络内容进行监控，防止某些特定内容在网络上进行传输的技术。主要实现有</p>
-<p>软件<a href="#jump">(点击跳转)</a>和硬件两种。</p>
-<p>性质为非营利性，开始启用时间为1995年，含义为对网络内容进行监控。</p>
-<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>在因特网上，内容过滤（content filtering），也被称作信息过滤（information filtering），是将Web网页或电子邮件中令人讨厌的信息屏蔽和拒绝存取或使用的技术。内容过滤被公司或家用电脑拥有者用作网络防火墙的一部分，尤其是父母可以为他们的孩子屏蔽掉那些不想让其访问的内容。</p>
-<p>内容过滤通常使用特征字符串进行工作，如果内容和字符串相符，则会把这部分内容屏蔽掉。被过滤的典型是那些带有色情、暴力、仇恨倾向的内容，==内容过滤程序的批评者指出，它可能在无形中将想要的内容同时过滤掉。==</p>
-<p>内容过滤和提供这项服务的产品分为网页过滤——屏蔽网站或页面的信息、邮件过滤——屏蔽电子邮件中的垃圾信息或其它令人讨厌的信息。</p>
-<h3 id="方法简介（先软件后硬件）"><a href="#方法简介（先软件后硬件）" class="headerlink" title="方法简介（先软件后硬件）"></a>方法简介（先软件后硬件）</h3><h4 id="软件过滤方式"><a href="#软件过滤方式" class="headerlink" title="软件过滤方式"></a>软件过滤方式</h4><p>内容过滤的软件方式主要是一项1995年开始启用的技术标准“Internet内容选择平台”，它是由一家非营利性Internet开放商联盟――万维网联盟(W3C)为解除1995年年末出台的美国《通讯正派条例》(该条例于1997年被否决)的威胁而推出的。Internet内容选择平台的设计理念是鼓励自由表达、保护未成年人的权益，把工具交给父母或其他人，让他们为自己和自己的孩子过滤内容。</p>
-<p>这类工具同时还可以将孩子或雇员送出的不恰当信息滤掉，比如家庭地址、信用卡号码、或机密的公司信息等等。</p>
-<p>软件过滤主要使用关键词匹配的方式，将特定内容移除。随着互联网应用的开展，软件过滤无法处理飞速增长的流量，于是硬件过滤应运而生。</p>
-<h4 id="硬件过滤方式"><a href="#硬件过滤方式" class="headerlink" title="硬件过滤方式"></a>硬件过滤方式</h4><p>硬件过滤方式就是将关键词匹配功能集成在控制有大量流量的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/交换机">交换机</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/路由器">路由器</a>中，以对网络中的流量进行监控。</p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>为防止暴力、恐怖、色情、颠覆主义等内容在互联网上传播，维护网络安全，净化网络，为广大网民提供绿色上网环境。</p>
-<h3 id="软件"><a href="#软件" class="headerlink" title="软件"></a><span id="jump">软件</span></h3><p>指按照特定顺序组织的计算机数据和指令的集合</p>
-<p>软件（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/中国大陆/5944925">中国大陆</a>及<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/香港/128775">香港</a>用语，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/台湾/122340">台湾</a>称作软体，英文：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/software/1438049">software</a>）是一系列按照特定顺序组织的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/计算机/140338">计算机</a>数据和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/指令/3225201">指令</a>的集合。一般来讲软件被划分为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/系统软件/215962">系统软件</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/应用软件/216367">应用软件</a>和介于这两者之间的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/中间件/452240">中间件</a>。软件并不只是包括可以在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/计算机/140338">计算机</a>（这里的计算机是指广义的计算机）上运行的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/电脑程序/265803">电脑程序</a>，与这些电脑程序相关的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/文档/1009768">文档</a>一般也被认为是软件的一部分。简单的说软件就是程序加文档的集合体。另也泛指社会结构中的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/管理系统/10991644">管理系统</a>、思想意识形态、思想政治觉悟、法律法规等等。</p>
-<p>开发语言为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Java/85979">Java</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%2FC%2B%2B">C/C++</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Basic/207698">Basic</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/python/407313">python</a>等</p>
-<p>应用类别<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/系统软件/215962">系统软件</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/应用软件/216367">应用软件</a>等</p>
-<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>国标中对软件的定义为：与计算机系统操作有关的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/计算机程序/3220205">计算机程序</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/规程">规程</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/规则/4405">规则</a>，以及可能有的文件、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/文档">文档</a>及数据。</p>
-<p>其它定义：</p>
-<p>1．运行时，能够提供所要求功能和性能的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/指令">指令</a>或<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/计算机程序">计算机程序</a>集合。</p>
-<p>2．程序能够满意地处理信息的数据结构。</p>
-<p>3．描述程序功能需求以及程序如何操作和使用所要求的文档。</p>
-<p>以开发语言作为描述语言，可以认为：软件=<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/程序/13831935">程序</a>+数据+文档</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>1、无形的，没有物理形态，只能通过运行状况来了解功能、特性、和质量</p>
-<p>2、软件渗透了大量的脑力劳动，人的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逻辑思维/2514407">逻辑思维</a>、智能活动和技术水平是软件产品的关键</p>
-<p>3、软件不会像硬件一样老化磨损，但存在缺陷维护和技术更新</p>
-<p>4、软件的开发和运行必须依赖于特定的计算机系统环境，对于硬件有依赖性，为了减少依赖，开发中提出了软件的可移植性</p>
-<p>5、软件具有可复用性，软件开发出来很容易被复制，从而形成多个副本</p>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><h5 id="应用类别"><a href="#应用类别" class="headerlink" title="应用类别"></a>应用类别</h5><p>按应用范围划分，一般来讲软件被划分为==系统软件==、==应用软件==和==介于这两者之间的中间件==。</p>
-<p><strong>系统软件</strong></p>
-<p>系统软件为计算机使用提供最基本的功能，可分为操作系统和支撑软件，其中操作系统是最基本的软件。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/系统软件">系统软件</a>是负责管理计算机系统中各种独立的硬件，使得它们可以协调工作。系统软件使得计算机使用者和其他软件将计算机当作一个整体而不需要顾及到底层每个硬件是如何工作的。</p>
-<p>1．操作系统是一管理计算机硬件与软件资源的程序，同时也是计算机系统的内核与基石。操作系统身负诸如管理与配置内存、决定系统资源供需的优先次序、控制输入与输出设备、操作网络与管理文件系统等基本事务。操作系统也提供一个让使用者与系统交互的操作接口。</p>
-<p>2．支撑软件是支撑各种软件的开发与维护的软件，又称为软件开发环境（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SDE">SDE</a>）。它主要包括<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/环境数据库">环境数据库</a>、各种接口软件和工具组。著名的软件开发环境有IBM公司的Web Sphere,<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/微软公司">微软公司</a>的等。</p>
-<p>包括一系列基本的工具（比如编译器、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/数据库管理">数据库管理</a>、存储器格式化、文件系统管理、用户身份验证、驱动管理、网络连接等方面的工具）。</p>
-<p><strong>应用软件</strong></p>
-<p>系统软件并不针对某一特定应用领域，而应用软件则相反，不同的应用软件根据用户和所服务的领域提供不同的功能。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/应用软件/216367">应用软件</a>是为了某种特定的用途而被开发的软件。它可以是一个特定的程序，比如一个图像浏览器。也可以是一组功能联系紧密，可以互相协作的程序的集合，比如微软的Office软件。也可以是一个由众多独立程序组成的庞大的软件系统，比如数据库管理系统。</p>
-<p>如今<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/智能手机/94396">智能手机</a>得到了极大的普及，运行在手机上的应用软件简称<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/手机软件/7973966">手机软件</a>。所谓手机软件就是可以安装在手机上的软件，完善原始系统的不足与个性化。随着科技的发展，手机的功能也越来越多，越来越强大。不是像过去的那么简单死板,发展到了可以和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/掌上电脑/576782">掌上电脑</a>相媲美。手机软件与电脑一样，下载手机软件时还要考虑你购买这一款手机所安装的系统来决定要下相对应的软件。手机主流系统有以下：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows Phone">Windows Phone</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Symbian">Symbian</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/iOS/45705">iOS</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Android/60243">Android</a>。</p>
-<h4 id="授权类别"><a href="#授权类别" class="headerlink" title="授权类别"></a>授权类别</h4><p>不同的软件一般都有对应的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件授权">软件授权</a>，软件的用户必须在同意所使用软件的许可证的情况下才能够合法的使用软件。从另一方面来讲，特定软件的许可条款也不能够与法律相违背。</p>
-<p>依据许可方式的不同，大致可将软件区分为几类：</p>
-<p><strong>专属软件</strong>：此类授权通常不允许用户随意的复制、研究、修改或散布该软件。违反此类授权通常会有严重的法律责任。传统的商业软件公司会采用此类授权，例如微软的Windows和办公软件。专属软件的源码通常被公司视为私有财产而予以严密的保护。</p>
-<p><strong>自由软件</strong>：此类授权正好与专属软件相反，赋予用户复制、研究、修改和散布该软件的权利，并提供源码供用户自由使用，仅给予些许的其它限制。以Linux、Firefox 和OpenOffice 可做为此类软件的代表。</p>
-<p><strong>共享软件</strong>：通常可免费的取得并使用其试用版，但在功能或使用期间上受到限制。开发者会鼓励用户付费以取得功能完整的商业版本。根据共享软件作者的授权，用户可以从各种渠道免费得到它的拷贝，也可以自由传播它。</p>
-<p><strong>免费软件</strong>：可免费取得和转载，但并不提供源码，也无法修改。</p>
-<p><strong>公共软件</strong>：原作者已放弃权利，著作权过期，或作者已经不可考究的软件。使用上无任何限制。</p>
-<h4 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h4><h5 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h5><p>软件开发是根据用户要求建造出软件系统或者系统中的软件部分的过程。软件开发是一项包括需求捕捉，需求分析，设计，实现和测试的系统工程。软件一般是用某种程序设计语言来实现的。通常采用软件开发工具可以进行开发。</p>
-<p><strong>软件开发流程</strong>即<strong>Software development process</strong>。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件设计">软件设计</a>思路和方法的一般过程，包括设计软件的功能和实现的算法和方法、软件的总体结构设计和模块设计、编程和调试、程序联调和测试以及编写、提交程序。</p>
-<p>1 相关系统分析员和用户初步了解需求，然后列出要开发的系统的大功能模块，每个大功能模块有哪些小功能模块，对于有些需求比较明确相关的界面时，在这一步里面可以初步定义好少量的界面。</p>
-<p>2 系统分析员深入了解和分析需求，根据自己的经验和需求做出一份文档系统的功能需求文档。这次的文档会清楚例用系统大致的大功能模块，大功能模块有哪些小功能模块，并且还例出相关的界面和界面功能。</p>
-<p>3 系统分析员和用户再次确认需求。</p>
-<p>4 系统分析员根据确认的需求文档所例用的界面和功能需求，用迭代的方式对每个界面或功能做系统的概要设计。</p>
-<p>5 系统分析员把写好的概要设计文档给程序员，程序员根据所例出的功能一个一个的编写。</p>
-<p>6 测试编写好的系统。交给用户使用，用户使用后一个一个的确认每个功能，然后验收。</p>
-<h5 id="软件工程师"><a href="#软件工程师" class="headerlink" title="软件工程师"></a>软件工程师</h5><p>一般指从事软件开发职业的人。软件工程师10余年来一直占据高薪职业排行榜的前列，作为高科技行业的代表，技术含量很高，职位的争夺也异常激烈。软件开发是一个系统的过程，需要经过市场需求分析、软件代码编写、软件测试、软件维护等程序。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件开发工程师">软件开发工程师</a>在整个过程中扮演着非常重要的角色，主要从事根据需求开发项目软件工作。</p>
-<h5 id="法律保护"><a href="#法律保护" class="headerlink" title="法律保护"></a>法律保护</h5><p>计算机软件作为一种知识产品，其要获得法律保护，必须具备以下必要条件：</p>
-<p><strong>（一）原创性。</strong>即软件应该是开发者独立设计、独立编制的编码组合。</p>
-<p><strong>（二）可感知性。</strong>受保护的软件须固定在某种有形物体上，通过客观手段表达出来并为人们所知悉。</p>
-<p><strong>（三）可再现性</strong>。即把软件转载在有形物体上的可能性。</p>
-<h5 id="著作权归属"><a href="#著作权归属" class="headerlink" title="著作权归属"></a>著作权归属</h5><p>根据《<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/计算机软件保护条例/1798797">计算机软件保护条例</a>》第10条的规定，计算机软件<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/著作权/505674">著作权</a>归属软件开发者。因此，确定计算机著作权归属的一般原则是“谁开发谁享有著作权”。软件开发者指实际组织进行开发工作，提供工作条件完成软件开发，并对软件承担责任的法人或者非法人单位，以及依靠自己具有的条件完成软件开发，并对软件承担责任的公民。</p>
-<h5 id="载体"><a href="#载体" class="headerlink" title="载体"></a>载体</h5><p>软件的载体可以是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/硬盘/159825">硬盘</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/光盘/170215">光盘</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/U盘/99846">U盘</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软盘/963560">软盘</a>等数据存储设备。</p>
-<h5 id="使用许可"><a href="#使用许可" class="headerlink" title="使用许可"></a>使用许可</h5><p>不同的软件一般都有对应的软件授权，软件的使用者必须在同意所使用软件的许可证的情况下才能够合法的使用软件。</p>
-<p>依据许可方式的不同，大致可将软件区分为几类：</p>
-<p>专属软件、自由软件、共享软件、免费软件、公共软件。</p>
-<h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件生命周期">软件生命周期</a>是指从软件定义、开发、使用、维护到报废为止的整个过程，一般包括问题定义、可行性分析、需求分析、总体设计、详细设计、编码、测试和维护。</p>
-<p>问题定义就是确定开发任务到底“要解决的问题是什么”，系统分析员通过对用户的访问调查，最后得出一份双方都满意的关于问题性质、工程目标和规模的书面报告。</p>
-<p>可行性分析就是分析上一个阶段所确定的问题到底“可行吗”，系统分析员对系统要进行更进一步的分析，更准确、更具体地确定工程规模与目标，论证在经济上和技术上是否可行，从而在理解工作范围和代价的基础上，做出软件计划。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/需求分析">需求分析</a>即使对用户要求进行具体分析，明确“目标系统要做什么”，把用户对软件系统的全部要求以需求说明书的形式表达出来。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/总体设计">总体设计</a>就是把软件的功能转化为所需要的体系结构，也就是决定系统的模块结构，并给出模块的相互调用关系、模块间传达的数据及每个模块的功能说明。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/详细设计">详细设计</a>就是决定模块内部的算法与数据结构，也是明确“怎么样具体实现这个系统”。</p>
-<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/编码/80092">编码</a>就是选取适合的程序设计语言对每个模板进行编码，并进行模块调试。</p>
-<p>测试就是通过各种类型的测试使软件达到预定的要求。</p>
-<p>维护就是软件交付给用户使用后，对软件不断查错、纠错和修改，使系统持久地满足用户的需求。</p>
-<p>软件的生命周期也可以分为3个大的阶段，分别是计划阶段、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/开发阶段">开发阶段</a>和维护阶段。</p>
-<h5 id="软件生命周期模型"><a href="#软件生命周期模型" class="headerlink" title="软件生命周期模型"></a>软件生命周期模型</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件生命周期模型/5746636">软件生命周期模型</a>也称为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件过程模型/9148835">软件过程模型</a>，反映软件生存周期各个阶段的工作如何组织、衔接，常用的有瀑布模型、原型模型、螺旋模型、增量模型、喷泉模型，还有建造-修补模型、MSF过程模型、快速原型模型。 [1] </p>
-<h5 id="常见的软件生命周期模型"><a href="#常见的软件生命周期模型" class="headerlink" title="常见的软件生命周期模型"></a>常见的软件生命周期模型</h5><p><strong>瀑布模型</strong></p>
-<p>有时也称为V模型，它是一种线型顺序模型，是项目自始至终按照一定顺序的步骤从需求分析进展到系统测试直到提交用户使用，它提供了一种结构化的、自顶向下的软件开发方法，每阶段主要工作成果从一个阶段传递到下一个阶段，必须经过严格的评审或测试，以判定是否可以开始下一阶段工作，各阶段相互独立、不重叠。瀑布模型是所有<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/软件生命周期模型/5746636">软件生命周期模型</a>的基础。 [1] </p>
-<p><strong>原型+瀑布模型</strong></p>
-<p>原型模型本身是一个迭代的模型，是为了解决在产品开发的早期阶段存在的不确定性、二义性和不完整性等问题，通过建立原型使开发者进一步确定其应开发的产品，使开发者的想象更具体化，也更易于被客户所理解。原型只是真实系统的一部分或一个模型，完全可能不完成任何有用的事情，通常包括抛弃型和进化型两种，抛弃型指原型建立、分析之后要扔掉，整个系统重新分析和设计；进化型则是对需求的定义较清楚的情形，原型建立之后要保留，作为系逐渐增加的基础，采用进化型一定要重视软件设计的系统性和完整性，并且在质量要求方面没有捷径，因此，对于描述相同的功能，建立进化型原型比建立抛弃型原型所花的时间要多。原型建立确认需求之后采用瀑布模型的方式完成项目开发。 [1] </p>
-<p><strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/增量模型">增量模型</a></strong></p>
-<p>与建造大厦相同，软件也是一步一步建造起来的。在增量模型中，软件被作为一系列的增量构件来设计、实现、集成和测试，每一个构件是由多种相互作用的模块所形成的提供特定功能的代码片段构成。增量模型在各个阶段并不交付一个可运行的完整产品，而是交付满足客户需求的一个子集的可运行产品。整个产品被分解成若干个构件，开发人员逐个构件地交付产品，这样做的好处是软件开发可以较好地适应变化，客户可以不断地看到所开发的软件，从而降低开发风险。</p>
-<p>一些大型系统往往需要很多年才能完成或者客户急于实现系统，各子系统往往采用增量开发的模式，先实现核心的产品，即实现基本的需求，但很多补充的特性(其中一些是已知的，另外一些是未知的)在下一期发布。增量模型强调每一个增量均发布一个可操作产品，每个增量构建仍然遵循设计-编码-测试的瀑布模型。 [1] </p>
-<p><strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/迭代模型">迭代模型</a></strong></p>
-<p>早在20世纪50年代末期，软件领域中就出现了迭代模型。最早的迭代过程可能被描述为“分段模型”。迭代，包括产生产品发布（稳定、可执行的产品版本）的全部开发活动和要使用该发布必需的所有其他外围元素。所以，在某种程度上，开发迭代是一次完整地经过所有工作流程的过程：（至少包括）需求工作流程、分析设计工作流程、实施工作流程和测试工作流程。</p>
-<p>实质上，它类似小型的瀑布式项目。所有的阶段（需求及其它）都可以细分为迭代。每一次的迭代都会产生一个可以发布的产品，这个产品是最终产品的一个子集。 [1] </p>
-<h5 id="开发语言"><a href="#开发语言" class="headerlink" title="开发语言"></a>开发语言</h5><h5 id="O语言"><a href="#O语言" class="headerlink" title="O语言"></a>O语言</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/O语言/8802244">O语言</a>是一款中文计算机语言（或称套装：O汇编语言、O中间语言、O高级语言）</p>
-<h5 id="Java语言"><a href="#Java语言" class="headerlink" title="Java语言"></a>Java语言</h5><p>作为跨平台的语言，可以运行在Windows和Unix/Linux下面，长期成为用户的首选。自JDK6.0以来，整体性能得到了极大的提高，市场使用率超过20%。可能已经达到了其鼎盛时期了，不知道后面能维持多长时间。</p>
-<h5 id="易语言（E语言）"><a href="#易语言（E语言）" class="headerlink" title="易语言（E语言）"></a>易语言（E语言）</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/易语言">易语言</a>是一个自主开发，适合国情，不同层次不同专业的人员易学易用的汉语编程语言。易语言降低了广大电脑用户编程的门槛，尤其是根本不懂英文或者英文了解很少的用户，可以通过使用本语言极其快速地进入<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Windows程序/15644576">Windows程序</a>编写的大门。 [2] </p>
-<h5 id="C-C-语言"><a href="#C-C-语言" class="headerlink" title="C/C++语言"></a>C/C++语言</h5><p>以上2个作为传统的语言，一直在效率第一的领域发挥着极大的影响力。像<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Java/85979">Java</a>这类的语言，其核心都是用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%2FC%2B%2B/6824246">C/C++</a>写的。在高并发和实时处理，工控等领域更是首选。</p>
-<h5 id="习语言"><a href="#习语言" class="headerlink" title="习语言"></a>习语言</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/习语言">习语言</a>即中文版的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C语言/105958">C语言</a></p>
-<h5 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h5><p>美国计算机科学家约翰·凯梅尼和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/托马斯·库尔茨">托马斯·库尔茨</a>于1959年研制的一种“初学者通用符号指令代码”，简称<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/BASIC/207698">BASIC</a>。由于BASIC语言易学易用，它很快就成为流行的计算机语言之一。</p>
-<h5 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h5><p>同样是跨平台的脚本语言，在网站编程上成为了大家的首选，支持PHP的主机非常便宜，PHP+Linux+MySQL+Apache的组合简单有效。</p>
-<h5 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h5><p>脚本语言的先驱，其优秀的文本处理能力，特别是正则表达式，成为了以后许多基于网站开发语言(比如PHP,Java,C#)的这方面的基础。</p>
-<h5 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Python/407313">Python</a>是一种面向对象的解释性的计算机程序设计语言，也是一种功能强大而完善的通用型语言，已经具有十多年的发展历史，成熟且稳定。Python 具有脚本语言中最丰富和强大的类库，足以支持绝大多数日常应用。</p>
-<p>这种语言具有非常简捷而清晰的语法特点，适合完成各种高层任务，几乎可以在所有的操作系统中运行。</p>
-<p>基于这种语言的相关技术正在飞速的发展，用户数量急剧扩大，相关的资源非常多。</p>
-<h5 id="C"><a href="#C" class="headerlink" title="C"></a>C</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/C%23/195147">C#</a>是微软公司发布的一种面向对象的、运行于NET Framework之上的高级程序设计语言，并定于在微软职业开发者论坛(PDC)上登台亮相。C#是微软公司研究员Anders Hejlsberg的最新成果。C#看起来与Java有着惊人的相似；它包括了诸如单一继承、界面，与Java几乎同样的语法，和编译成中间代码再运行的过程。但是C#与Java有着明显的不同，它借鉴了<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Delphi/140081">Delphi</a>的一个特点，与COM(<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/组件对象模型/3351546">组件对象模型</a>)是直接集成的，而且它是微软公司<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/.NET/156737">.NET</a> Windows网络框架的主角。</p>
-<h5 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/JavaScript/321142">JavaScript</a>是一种由Netscape的LiveScript发展而来的脚本语言，主要目的是为了解决服务器终端语言，比如Perl，遗留的速度问题。当时服务端需要对数据进行验证，由于网络速度相当缓慢，只有28.8kbps，验证步骤浪费的时间太多。于是Netscape的浏览器Navigator加入了Javascript，提供了数据验证的基本功能。</p>
-<h5 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h5><p>一种为简单快捷<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/面向对象编程">面向对象编程</a>（面向对象程序设计）而创的脚本语言，由日本人松本行弘（まつもとゆきひろ，英译：Yukihiro Matsumoto，外号matz）开发，遵守GPL协议和Ruby License。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Ruby/11419">Ruby</a>的作者认为Ruby &gt; (Smalltalk + Perl) / 2，表示Ruby是一个语法像Smalltalk一样完全面向对象、脚本执行、又有Perl强大的文字处理功能的编程语言。</p>
-<h5 id="Fortran"><a href="#Fortran" class="headerlink" title="Fortran"></a>Fortran</h5><p>在科学计算软件领域，Fortran曾经是最主要的编程语言。比较有代表性的有Fortran 77、Watcom Fortran、NDP Fortran等。</p>
-<h5 id="Objective-C"><a href="#Objective-C" class="headerlink" title="Objective C"></a>Objective C</h5><p>这是一种运行在<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/苹果公司">苹果公司</a>的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Mac OS X/470629">Mac OS X</a>，iOS操作系统上的语言。这两种操作系统的上层图形环境，应用程序编程框架都是使用该语言实现的。随著iPhone,iPad的流行，这种语言也开始在全世界流行。</p>
-<h5 id="Pascal"><a href="#Pascal" class="headerlink" title="Pascal"></a>Pascal</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Pascal/241171">Pascal</a>是一种计算机通用的高级程序设计语言。Pascal的取名是为了纪念十七世纪法国著名哲学家和数学家Blaise Pascal。它由瑞士Niklaus Wirth教授于六十年代末设计并创立。Pascal语言语法严谨，层次分明，程序易写，具有很强的可读性，是第一个结构化的编程语言。</p>
-<h5 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h5><p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Swift/14080957">Swift</a>，苹果于2014年<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/WWDC">WWDC</a>（苹果开发者大会）发布的新开发语言，可与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Objective-C">Objective-C</a>共同运行于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Mac OS">Mac OS</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/iOS">iOS</a>平台，用于搭建基于苹果平台的应用程序。</p>
-<hr>
-<h3 id="caj文件"><a href="#caj文件" class="headerlink" title="caj文件"></a>caj文件</h3><p>caj文件是中国期刊网提供的一种文件格式,现在网络的很多文献都采用了 caj 文件格式。在浏览 caj 格式文件的时候,你也必须使用相应的阅读器才可以,通用的caj阅读器为CAJViewer。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">离散知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jvm</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IP封锁</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Java基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/更多知识//" class="article-tag-list-link color5">更多知识</a>
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="/images/loading.png" data-original="//pan.baidu.com/share/qrcode?url=http://example.com/2021/02/25/%E7%BF%BB%E5%A2%99-%E4%B8%8A%EF%BC%89/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/02/25/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4%E6%AD%BB%E4%BA%A1%E5%BC%80%E5%85%B3%E5%9C%A8%E6%95%B0%E6%8D%AE%E6%96%B9%E9%9D%A2%E7%9C%9F%E7%9A%84%E8%83%BD%E5%AE%9E%E7%8E%B0%E5%90%97%EF%BC%9F/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          科幻小说死亡开关在数据方面真的能实现吗？
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/02/24/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">日记</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81ip-%E5%B0%81%E9%94%81%EF%BC%88IP-Block%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">1、ip 封锁（IP Block）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BF%A5"><span class="toc-number">1.1.</span> <span class="toc-text">缺点￥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%83%85%E5%86%B5"><span class="toc-number">1.2.</span> <span class="toc-text">常见情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4content-filter"><span class="toc-number">2.</span> <span class="toc-text">2、内容过滤content filter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text">解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E7%AE%80%E4%BB%8B%EF%BC%88%E5%85%88%E8%BD%AF%E4%BB%B6%E5%90%8E%E7%A1%AC%E4%BB%B6%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">方法简介（先软件后硬件）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.1.</span> <span class="toc-text">软件过滤方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E8%BF%87%E6%BB%A4%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.2.</span> <span class="toc-text">硬件过滤方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-number">2.3.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text">软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">2.4.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">2.4.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">2.4.3.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E7%B1%BB%E5%88%AB"><span class="toc-number">2.4.3.1.</span> <span class="toc-text">应用类别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%88%E6%9D%83%E7%B1%BB%E5%88%AB"><span class="toc-number">2.4.4.</span> <span class="toc-text">授权类别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-number">2.4.5.</span> <span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">2.4.5.1.</span> <span class="toc-text">开发流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88"><span class="toc-number">2.4.5.2.</span> <span class="toc-text">软件工程师</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B3%95%E5%BE%8B%E4%BF%9D%E6%8A%A4"><span class="toc-number">2.4.5.3.</span> <span class="toc-text">法律保护</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%91%97%E4%BD%9C%E6%9D%83%E5%BD%92%E5%B1%9E"><span class="toc-number">2.4.5.4.</span> <span class="toc-text">著作权归属</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%BD%E4%BD%93"><span class="toc-number">2.4.5.5.</span> <span class="toc-text">载体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%8F%AF"><span class="toc-number">2.4.5.6.</span> <span class="toc-text">使用许可</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.4.5.7.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.4.5.8.</span> <span class="toc-text">软件生命周期模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%BD%AF%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.4.5.9.</span> <span class="toc-text">常见的软件生命周期模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E8%AF%AD%E8%A8%80"><span class="toc-number">2.4.5.10.</span> <span class="toc-text">开发语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#O%E8%AF%AD%E8%A8%80"><span class="toc-number">2.4.5.11.</span> <span class="toc-text">O语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Java%E8%AF%AD%E8%A8%80"><span class="toc-number">2.4.5.12.</span> <span class="toc-text">Java语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%98%93%E8%AF%AD%E8%A8%80%EF%BC%88E%E8%AF%AD%E8%A8%80%EF%BC%89"><span class="toc-number">2.4.5.13.</span> <span class="toc-text">易语言（E语言）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C-C-%E8%AF%AD%E8%A8%80"><span class="toc-number">2.4.5.14.</span> <span class="toc-text">C&#x2F;C++语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B9%A0%E8%AF%AD%E8%A8%80"><span class="toc-number">2.4.5.15.</span> <span class="toc-text">习语言</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Basic"><span class="toc-number">2.4.5.16.</span> <span class="toc-text">Basic</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#PHP"><span class="toc-number">2.4.5.17.</span> <span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Perl"><span class="toc-number">2.4.5.18.</span> <span class="toc-text">Perl</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python"><span class="toc-number">2.4.5.19.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#C"><span class="toc-number">2.4.5.20.</span> <span class="toc-text">C</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript"><span class="toc-number">2.4.5.21.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Ruby"><span class="toc-number">2.4.5.22.</span> <span class="toc-text">Ruby</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Fortran"><span class="toc-number">2.4.5.23.</span> <span class="toc-text">Fortran</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Objective-C"><span class="toc-number">2.4.5.24.</span> <span class="toc-text">Objective C</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Pascal"><span class="toc-number">2.4.5.25.</span> <span class="toc-text">Pascal</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Swift"><span class="toc-number">2.4.5.26.</span> <span class="toc-text">Swift</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#caj%E6%96%87%E4%BB%B6"><span class="toc-number">2.5.</span> <span class="toc-text">caj文件</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-  
-  
-        
-            <section id="comments" class="comments">
-              <style>
-                .comments{margin:30px;padding:10px;background:#fff}
-                @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-              </style>
-              <div id="vcomment" class="comment"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    var notify = 'false' == true ? true : false;
-    var verify = 'false' == true ? true : false;
-    new Valine({
-        av: AV,
-        el: '#vcomment',
-        notify: notify,
-        app_id: "w0yA7XhTVylmpn4lED189osY-gzGzoHsz",
-        app_key: "6BiGNV69xE0z7Pywq6FUFUBn",
-        placeholder: "有话要说？",
-        avatar:"mm",
-    });
-</script>
-          </section>
-        
-  
+    
 
 
           </div>
@@ -506,9 +246,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -572,11 +312,75 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">离散知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">个人总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hexo博客搭建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">域名劫持</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">uuid</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">常用类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">狂神系列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">springmvc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异常</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,10 +397,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">狂神系列</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,14 +420,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
@@ -640,15 +432,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">rdb与aof</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">redis发布订阅</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">springmvc</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,55 +440,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">rdb与aof</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">多线程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">离散知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">uuid</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pat</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">网络编程</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hexo博客搭建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异常</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">个人总结</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">域名劫持</a>
+                <a href="javascript:void(0)" class="js-tag color5">IP封锁</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,7 +468,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IP封锁</a>
+                <a href="javascript:void(0)" class="js-tag color4">jvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java基础</a>
               </li>
              
               <li class="article-tag-list-item">
