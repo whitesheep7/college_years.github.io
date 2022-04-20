@@ -1,7 +1,8 @@
-# touchingwang.github.io
 我的hexo博客
 ## 大学期间的博客
 > 记录的是我大学期间的博客，大学期间的技术学习主要是围绕这java和算法的学习，其中还有一下我的日常兴趣，预计22年下半年就会结束了
+
+[博客地址](whitesheep7.github.io)
 
 内容分享
 ![主页](https://user-images.githubusercontent.com/75372171/163905983-a2a6d9fc-8aa8-4d9d-a987-2c04bb279c3e.png)
